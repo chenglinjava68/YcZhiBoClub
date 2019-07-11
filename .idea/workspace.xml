@@ -1,22 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f1918366-e1b6-41c1-8d39-eee83bb8e8ee" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/YcApp/conf/log4j.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/kafka/OptionsCli.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/runApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_cli_commons_cli_1_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_cli_commons_cli_1_4.xml" afterDir="false" />
+    <list default="true" id="f1918366-e1b6-41c1-8d39-eee83bb8e8ee" name="Default Changelist" comment="完善线上线下的配置，更换log日志的配置文件到外部">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/YcApp/YcApp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/YcApp/YcApp.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/YcApp/conf/server.properties" beforeDir="false" afterPath="$PROJECT_DIR$/YcApp/conf/server.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/YcApp/conf_online/events_consumer.properties" beforeDir="false" afterPath="$PROJECT_DIR$/YcApp/conf_online/events_consumer.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/YcApp/conf_online/server.properties" beforeDir="false" afterPath="$PROJECT_DIR$/YcApp/conf_online/server.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/YcApp/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/YcApp/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/DBopts/PGCopyInUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/DBopts/PGCopyInUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/kafka/EventsConsumers.java" beforeDir="false" afterPath="$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/kafka/EventsConsumers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/kafka/FansBatchConsumers.java" beforeDir="false" afterPath="$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/kafka/FansBatchConsumers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/YcApp/src/main/resources/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/YcApp/conf_online/log4j.properties" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/YcWeb/target/" />
     <ignored path="$PROJECT_DIR$/YcApp/target/" />
@@ -34,104 +21,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/runApplication.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" selection-start-line="9" selection-end-line="9" />
-              <folding>
-                <element signature="e#148#149#0" expanded="true" />
-                <element signature="e#198#199#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/kafka/FansBatchConsumers.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="92" selection-start-line="92" selection-end-line="93" selection-end-column="54" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/kafka/EventsConsumers.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="107">
-              <caret line="90" column="54" selection-start-line="90" selection-start-column="54" selection-end-line="90" selection-end-column="54" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/YcApp/conf/events_consumer.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="20" lean-forward="true" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/YcApp/conf_online/events_consumer.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="1" selection-start-line="1" selection-end-line="1" />
-              <caret line="2" selection-start-line="2" selection-end-line="2" />
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
-              <caret line="4" selection-start-line="4" selection-end-line="4" />
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
-              <caret line="7" selection-start-line="7" selection-end-line="7" />
-              <caret line="8" selection-start-line="8" selection-end-line="8" />
-              <caret line="9" selection-start-line="9" selection-end-line="9" />
-              <caret line="10" selection-start-line="10" selection-end-line="10" />
-              <caret line="11" selection-start-line="11" selection-end-line="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/YcApp/conf_online/fans_consumer.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" selection-start-line="11" selection-end-line="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/YcApp/conf_online/postgresql.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/YcApp/conf_online/server.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="28" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/YcApp/conf/server.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="28" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="323">
+                <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/YcApp/conf_online/log4j.properties">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -169,7 +68,6 @@
         <option value="$PROJECT_DIR$/YcApp/conf_online/fans_consumer.properties" />
         <option value="$PROJECT_DIR$/YcApp/conf/fans_consumer.properties" />
         <option value="$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/Application.java" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/YcApp/pom.xml" />
         <option value="$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/runApplication.java" />
         <option value="$PROJECT_DIR$/YcApp/src/main/resources/log4j.properties" />
@@ -180,6 +78,7 @@
         <option value="$PROJECT_DIR$/YcApp/conf_online/events_consumer.properties" />
         <option value="$PROJECT_DIR$/YcApp/conf_online/server.properties" />
         <option value="$PROJECT_DIR$/YcApp/conf/server.properties" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -206,10 +105,10 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="y" value="104" />
     <option name="width" value="1680" />
-    <option name="height" value="956" />
+    <option name="height" value="958" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -231,30 +130,7 @@
             <path>
               <item name="YcZhiBoClub" type="b2602c69:ProjectViewProjectNode" />
               <item name="YcZhiBoClub" type="462c0819:PsiDirectoryNode" />
-              <item name="YcApp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="YcZhiBoClub" type="b2602c69:ProjectViewProjectNode" />
-              <item name="YcZhiBoClub" type="462c0819:PsiDirectoryNode" />
-              <item name="YcApp" type="462c0819:PsiDirectoryNode" />
-              <item name="conf" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="YcZhiBoClub" type="b2602c69:ProjectViewProjectNode" />
-              <item name="YcZhiBoClub" type="462c0819:PsiDirectoryNode" />
-              <item name="YcApp" type="462c0819:PsiDirectoryNode" />
-              <item name="conf_online" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="YcZhiBoClub" type="b2602c69:ProjectViewProjectNode" />
-              <item name="YcZhiBoClub" type="462c0819:PsiDirectoryNode" />
               <item name="YcWeb" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="YcZhiBoClub" type="b2602c69:ProjectViewProjectNode" />
-              <item name="YcZhiBoClub" type="462c0819:PsiDirectoryNode" />
-              <item name="YcWeb" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -301,7 +177,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.EventsConsumers">
+  <component name="RunManager" selected="Application.runApplication">
     <configuration name="EventsConsumers" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.zhiboclub.ycapp.kafka.EventsConsumers" />
       <module name="YcApp" />
@@ -377,9 +253,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.runApplication" />
         <item itemvalue="Application.EventsConsumers" />
         <item itemvalue="Application.FansBatchConsumers" />
-        <item itemvalue="Application.runApplication" />
         <item itemvalue="Application.KafkaProducers" />
         <item itemvalue="Spring Boot.YcApplication" />
       </list>
@@ -396,7 +272,7 @@
       <option name="presentableId" value="Default" />
       <updated>1562807814710</updated>
       <workItem from="1562807816664" duration="44000" />
-      <workItem from="1562824199373" duration="14904000" />
+      <workItem from="1562824199373" duration="16849000" />
     </task>
     <task id="LOCAL-00001" summary="初始化app和web两个项目&#10;web中添加events表的查询接口">
       <created>1562809797585</created>
@@ -419,14 +295,21 @@
       <option name="project" value="LOCAL" />
       <updated>1562824556813</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="完善线上线下的配置，更换log日志的配置文件到外部">
+      <created>1562839695261</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1562839695261</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24986000" />
+    <option name="totallyTimeSpent" value="26931000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1680" height="956" extended-state="0" />
+    <frame x="1" y="23" width="1680" height="956" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Web" order="0" sideWeight="0.50088185" side_tool="true" weight="0.2008547" />
@@ -456,7 +339,7 @@
       <window_info anchor="bottom" id="Docker" order="15" show_stripe_button="false" />
       <window_info anchor="right" id="Bean Validation" order="0" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="2" weight="0.24969475" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
       <window_info anchor="right" id="Maven" order="4" visible="true" weight="0.16971917" />
       <window_info anchor="right" id="Palette" order="5" />
@@ -473,12 +356,14 @@
     <MESSAGE value="初始化app和web两个项目&#10;web中添加events表的查询接口" />
     <MESSAGE value="整合kafka消费代码，将配置文件分开归类" />
     <MESSAGE value="完善readme" />
-    <option name="LAST_COMMIT_MESSAGE" value="完善readme" />
+    <MESSAGE value="完善线上线下的配置，更换log日志的配置文件到外部" />
+    <option name="LAST_COMMIT_MESSAGE" value="完善线上线下的配置，更换log日志的配置文件到外部" />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/YcWeb/src/main/java/ycweb/controller/IndexController.java" />
-    <entry file="file://$PROJECT_DIR$/YcWeb/src/main/java/ycweb/domain/Events.java" />
-    <entry file="file://$PROJECT_DIR$/YcWeb/src/main/java/ycweb/mapper/EventsMapper.java" />
     <entry file="file://$PROJECT_DIR$/YcWeb/src/main/java/ycweb/mapper/FansInfoMapper.java" />
     <entry file="file://$PROJECT_DIR$/YcWeb/src/main/java/ycweb/YcApplication.java" />
     <entry file="file://$PROJECT_DIR$/YcWeb/src/main/resources/application.properties">
@@ -697,16 +582,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="340">
-            <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="46" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/Utils/ConfigurationManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1472">
@@ -728,20 +603,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/YcApp/conf/log4j.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="62">
-          <caret line="68" column="55" lean-forward="true" selection-start-line="68" selection-start-column="55" selection-end-line="68" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/YcApp/conf/fans_consumer.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="14" lean-forward="true" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/DBopts/PGCopyInUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-257">
@@ -755,20 +616,6 @@
           <caret line="22" column="9" lean-forward="true" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/runApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-          <folding>
-            <element signature="e#148#149#0" expanded="true" />
-            <element signature="e#198#199#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/YcApp/conf_online/log4j.properties">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/kafka/FansBatchConsumers.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -784,10 +631,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/YcApp/conf/events_consumer.properties">
+    <entry file="file://$PROJECT_DIR$/YcApp/conf/server.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="20" lean-forward="true" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
+        <state relative-caret-position="68">
+          <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/YcApp/conf_online/server.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-412">
+          <caret line="6" column="28" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/YcApp/conf_online/postgresql.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/YcApp/conf_online/log4j.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/YcApp/conf_online/fans_consumer.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
     </entry>
@@ -808,31 +679,60 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/YcApp/conf_online/fans_consumer.properties">
+    <entry file="file://$PROJECT_DIR$/YcApp/conf/log4j.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="68" column="55" selection-start-line="68" selection-start-column="55" selection-end-line="68" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/YcApp/conf/fans_consumer.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
+          <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/YcApp/conf_online/postgresql.properties">
+    <entry file="file://$PROJECT_DIR$/YcApp/conf/events_consumer.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        <state relative-caret-position="306">
+          <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/YcApp/conf_online/server.properties">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="28" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
+        <state relative-caret-position="85">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/YcApp/conf/server.properties">
+    <entry file="file://$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/runApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="28" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
+        <state relative-caret-position="51">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+          <folding>
+            <element signature="e#148#149#0" expanded="true" />
+            <element signature="e#198#199#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/YcZhiBoClub.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2451" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="323">
+            <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

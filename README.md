@@ -17,6 +17,8 @@
     
 三、打包运行
 
-    1、运行maven -> package打包，然后到使用命令后台运行
+    1、导入依赖包和配置文件配置文件
+    
+    2、运行maven -> package打包，然后到使用命令后台运行
         nohup java -cp project.jar MainClass &
     
