@@ -1,5 +1,6 @@
 package com.zhiboclub.ycapp.kafka;
 
+import java.io.File;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -13,25 +14,31 @@ import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.kafka.common.TopicPartition;
+import org.apache.log4j.PropertyConfigurator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class EventsConsumers {
+    static{
+        if(new File(System.getProperty("user.dir") + "/conf/log4j.properties").exists()){
+            PropertyConfigurator.configure(System.getProperty("user.dir") + "/conf/log4j.properties");
+        }else if(new File(System.getProperty("user.dir") + "/YcApp/conf/log4j.properties").exists()){
+            PropertyConfigurator.configure(System.getProperty("user.dir") + "/YcApp/conf/log4j.properties");
+        }else{
+            System.out.println("没有log4j的配置文件，日志打印会存在问题!");
+        }
+    }
 
     private static final Logger LOG = LoggerFactory.getLogger(EventsConsumers.class);
 
-
-    private static final String eventsPropertiesFile = "YcApp/conf/events_consumer.properties";
-    private static final int RETRYNUM = Integer.valueOf(ConfigurationManager.getInstance().GetValues(eventsPropertiesFile, "app.retrynum", "3"));
-    private static final int GLOBAL_RETRY = Integer.valueOf(ConfigurationManager.getInstance().GetValues(eventsPropertiesFile, "app.global.retry", "100"));
-    private static final int ISNEXTRETRY = Integer.valueOf(ConfigurationManager.getInstance().GetValues(eventsPropertiesFile, "app.isnextretry", "10"));
-    private static final String SPLITCHAR = "\u0001,\u0001";
-
-    private static final String TABLENAME = ConfigurationManager.getInstance().GetValues(eventsPropertiesFile, "gsql.tablename", "test");
-
-    private static String topic = ConfigurationManager.getInstance().GetValues(eventsPropertiesFile, "topic", "testp3");
-
-    private static final int minBatchSize = Integer.valueOf(ConfigurationManager.getInstance().GetValues(eventsPropertiesFile, "minBatchSize", "1"));
+    private static String eventsPropertiesFile = "";
+    private static String SPLITCHAR = "\u0001,\u0001";
+    private static int RETRYNUM = 0;
+    private static int GLOBAL_RETRY = 0;
+    private static int ISNEXTRETRY = 0;
+    private static String TABLENAME = "";
+    private static String topic = "";
+    private static int minBatchSize = 0;
 
     private static Properties props = null;
 
@@ -59,6 +66,36 @@ public class EventsConsumers {
     }
 
     public static void main(String[] args) {
+
+        String file = new OptionsCli().getConf2Cli(args);
+        if(file != "" && file != null) {
+            if(new File(file).exists()) {
+                eventsPropertiesFile = file;
+                LOG.info("采用的手动指定的方式获取配置文件");
+            }else{
+                LOG.error("请检查配置文件填写是否正确！");
+                return;
+            }
+        }else{
+            LOG.info("采用的默认的方式获取配置文件");
+            if(new File(System.getProperty("user.dir") + "/conf/events_consumer.properties").exists()){
+                eventsPropertiesFile=System.getProperty("user.dir") + "/conf/events_consumer.properties";
+            }else if(new File(System.getProperty("user.dir") + "/YcApp/conf/events_consumer.properties").exists()){
+                eventsPropertiesFile=System.getProperty("user.dir") + "/YcApp/conf/events_consumer.properties";
+            }else{
+                System.out.println("没有consumer的配置文件，请指定位置!");
+                return;
+            }
+        }
+
+        LOG.info("配置文件为+++++++++"+eventsPropertiesFile);
+        RETRYNUM = Integer.valueOf(ConfigurationManager.getInstance().GetValues(eventsPropertiesFile, "app.retrynum", "3"));
+        GLOBAL_RETRY = Integer.valueOf(ConfigurationManager.getInstance().GetValues(eventsPropertiesFile, "app.global.retry", "100"));
+        ISNEXTRETRY = Integer.valueOf(ConfigurationManager.getInstance().GetValues(eventsPropertiesFile, "app.isnextretry", "10"));
+        TABLENAME = ConfigurationManager.getInstance().GetValues(eventsPropertiesFile, "gsql.tablename", "test");
+        topic = ConfigurationManager.getInstance().GetValues(eventsPropertiesFile, "topic", "testp3");
+        minBatchSize = Integer.valueOf(ConfigurationManager.getInstance().GetValues(eventsPropertiesFile, "minBatchSize", "1"));
+
 
         init();
 

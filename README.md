@@ -1,4 +1,4 @@
-简介：
+一、简介：
     本项目为两个模块YcApp和YcWeb
     
     注：
@@ -6,55 +6,17 @@
     YcWeb：主要是开发web相关rest等接口使用
     
   
-  
-── conf
-│   ├── server.properties
-│   └── sql
-├── logs
-│   ├── errordata_2019070515.log
-│   ├── server.log
-│   └── server_error.log
-├── pom.xml
-├── resources
-│   └── log4j.properties
-├── src
-│   ├── main
-│   │   └── java
-│   │       └── com
-│   │           └── yicai
-│   │               ├── Bean
-│   │               │   ├── AnchorFans.java
-│   │               │   ├── EventsMesgInfo.java
-│   │               │   ├── FansInfo.java
-│   │               │   ├── FansKafkaMesgInfo.java
-│   │               │   └── KafkaMesgInfo.java
-│   │               ├── DBopts
-│   │               │   └── PGCopyInUtils.java
-│   │               ├── ErrorUtils
-│   │               │   ├── CopyInErrorToFile.java
-│   │               │   └── HandelPGCopyinError.java
-│   │               ├── Spark
-│   │               │   ├── ConfigurationManager.java
-│   │               │   ├── Constants.java
-│   │               │   ├── EventsUserFlowWithSpark.java
-│   │               │   ├── KafkaStreamingWordCount.java
-│   │               │   └── SparkWordCount.java
-│   │               ├── Utils
-│   │               │   ├── ConfigurationManager.java
-│   │               │   └── TimeManager.java
-│   │               ├── kafka
-│   │               │   ├── ConsumerRecordToBean.java
-│   │               │   ├── EventsConsumers.java
-│   │               │   ├── FansBatchConsumers.java
-│   │               │   ├── FansConsumers.java
-│   │               │   └── KafkaProducers.java
-│   │               └── test
-│   │                   ├── test_gp_conn.java
-│   │                   ├── test_serializable.java
-│   │                   ├── test_time.java
-│   │                   └── testfile.java
-└── target
-    ├── java
-    │   ├── Demokafka-0.0.1-SNAPSHOT.jar
-    │   └── lib
-    └── test-classes
+二、项目目录结构
+
+    logs            日志目录
+    conf            配置目录
+    src             源码目录
+    resources       资源文件
+    target          打包目录
+    
+    
+三、打包运行
+
+    1、运行maven -> package打包，然后到使用命令后台运行
+        nohup java -cp project.jar MainClass &
+    

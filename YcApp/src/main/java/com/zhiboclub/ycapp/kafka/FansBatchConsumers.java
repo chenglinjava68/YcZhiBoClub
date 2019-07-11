@@ -7,9 +7,11 @@ import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.kafka.common.TopicPartition;
+import org.apache.log4j.PropertyConfigurator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.File;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -18,21 +20,27 @@ import java.util.Properties;
 
 public class FansBatchConsumers {
 
+    static{
+        if(new File(System.getProperty("user.dir") + "/conf/log4j.properties").exists()){
+            PropertyConfigurator.configure(System.getProperty("user.dir") + "/conf/log4j.properties");
+        }else if(new File(System.getProperty("user.dir") + "/YcApp/conf/log4j.properties").exists()){
+            PropertyConfigurator.configure(System.getProperty("user.dir") + "/YcApp/conf/log4j.properties");
+        }else{
+            System.out.println("没有log4j的配置文件，日志打印会存在问题!");
+        }
+    }
+
     private static final Logger LOG = LoggerFactory.getLogger(FansBatchConsumers.class);
 
-
-    private static final String fansPropertiesFile = "YcApp/conf/fans_consumer.properties";
-    private static final int RETRYNUM = Integer.valueOf(ConfigurationManager.getInstance().GetValues(fansPropertiesFile, "app.retrynum", "3"));
-    private static final int GLOBAL_RETRY = Integer.valueOf(ConfigurationManager.getInstance().GetValues(fansPropertiesFile, "app.global.retry", "100"));
-    private static final int ISNEXTRETRY = Integer.valueOf(ConfigurationManager.getInstance().GetValues(fansPropertiesFile, "app.isnextretry", "10"));
-    private static final String SPLITCHAR = "\u0001,\u0001";
-
-    private static final String TABLENAME1 = ConfigurationManager.getInstance().GetValues(fansPropertiesFile, "gsql.tablename1", "test");
-    private static final String TABLENAME2 = ConfigurationManager.getInstance().GetValues(fansPropertiesFile, "gsql.tablename2", "test");
-
-    private static String topic = ConfigurationManager.getInstance().GetValues(fansPropertiesFile, "topic", "testp3");
-
-    private static final int minBatchSize = Integer.valueOf(ConfigurationManager.getInstance().GetValues(fansPropertiesFile, "minBatchSize", "1"));
+    private static String fansPropertiesFile = "";
+    private static String SPLITCHAR = "\u0001,\u0001";
+    private static int RETRYNUM = 0;
+    private static int GLOBAL_RETRY = 0;
+    private static int ISNEXTRETRY = 0;
+    private static String topic = "";
+    private static int minBatchSize = 0;
+    private static String TABLENAME1 = "";
+    private static String TABLENAME2 = "";
 
     private static Properties props = null;
 
@@ -61,6 +69,36 @@ public class FansBatchConsumers {
 
 
     public static void main(String[] args) {
+
+        String file = new OptionsCli().getConf2Cli(args);
+        if(file != "" && file != null) {
+            if(new File(file).exists()) {
+                fansPropertiesFile = file;
+                LOG.info("采用的手动指定的方式获取配置文件");
+            }else{
+                LOG.error("请检查配置文件填写是否正确！");
+                return;
+            }
+        }else{
+            LOG.info("采用的默认的方式获取配置文件");
+            if(new File(System.getProperty("user.dir") + "/conf/fans_consumer.properties").exists()){
+                fansPropertiesFile=System.getProperty("user.dir") + "/conf/fans_consumer.properties";
+            }else if(new File(System.getProperty("user.dir") + "/YcApp/conf/fans_consumer.properties").exists()){
+                fansPropertiesFile=System.getProperty("user.dir") + "/YcApp/conf/fans_consumer.properties";
+            }else{
+                System.out.println("没有consumer的配置文件，请指定位置!");
+                return;
+            }
+        }
+
+        LOG.info("配置文件为+++++++++"+fansPropertiesFile);
+        RETRYNUM = Integer.valueOf(ConfigurationManager.getInstance().GetValues(fansPropertiesFile, "app.retrynum", "3"));
+        GLOBAL_RETRY = Integer.valueOf(ConfigurationManager.getInstance().GetValues(fansPropertiesFile, "app.global.retry", "100"));
+        ISNEXTRETRY = Integer.valueOf(ConfigurationManager.getInstance().GetValues(fansPropertiesFile, "app.isnextretry", "10"));
+        TABLENAME1 = ConfigurationManager.getInstance().GetValues(fansPropertiesFile, "gsql.tablename1", "test");
+        TABLENAME2 = ConfigurationManager.getInstance().GetValues(fansPropertiesFile, "gsql.tablename2", "test");
+        topic = ConfigurationManager.getInstance().GetValues(fansPropertiesFile, "topic", "testp3");
+        minBatchSize = Integer.valueOf(ConfigurationManager.getInstance().GetValues(fansPropertiesFile, "minBatchSize", "1"));
 
         init();
         LOG.info("Properties 配置文件初始化成功！");

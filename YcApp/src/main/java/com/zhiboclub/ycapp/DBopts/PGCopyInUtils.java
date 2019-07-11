@@ -1,12 +1,9 @@
 package com.zhiboclub.ycapp.DBopts;
 
-import java.io.ByteArrayInputStream;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.sql.*;
 
+import org.apache.log4j.PropertyConfigurator;
 import org.postgresql.copy.CopyManager;
 import org.postgresql.core.BaseConnection;
 import org.slf4j.Logger;
@@ -15,6 +12,15 @@ import org.slf4j.LoggerFactory;
 import com.zhiboclub.ycapp.Utils.ConfigurationManager;
 
 public class PGCopyInUtils {
+    static{
+        if(new File(System.getProperty("user.dir") + "/conf/log4j.properties").exists()){
+            PropertyConfigurator.configure(System.getProperty("user.dir") + "/conf/log4j.properties");
+        }else if(new File(System.getProperty("user.dir") + "/YcApp/conf/log4j.properties").exists()){
+            PropertyConfigurator.configure(System.getProperty("user.dir") + "/YcApp/conf/log4j.properties");
+        }else{
+            System.out.println("没有log4j的配置文件，日志打印会存在问题!");
+        }
+    }
     private static final Logger LOG = LoggerFactory.getLogger(PGCopyInUtils.class);
 
     private static String url = null;
@@ -25,7 +31,7 @@ public class PGCopyInUtils {
     private static PGCopyInUtils pgutil = null;
 
 
-    private static final String psqlPropertiesFile = "YcApp/conf/postgresql.properties";
+    private static String psqlPropertiesFile = "";
 
     /**
      * 实例化类的对象，实现单例
@@ -44,6 +50,14 @@ public class PGCopyInUtils {
      * 初始化参数
      */
     public void init() {
+        if(new File(System.getProperty("user.dir") + "/conf/postgresql.properties").exists()){
+            psqlPropertiesFile = System.getProperty("user.dir") + "/conf/postgresql.properties";
+        }else if(new File(System.getProperty("user.dir") + "/YcApp/conf/postgresql.properties").exists()){
+            psqlPropertiesFile=System.getProperty("user.dir") + "/YcApp/conf/postgresql.properties";
+        }else{
+            LOG.error("没有指定数据库配置文件，无法连接到数据库，请重试!");
+            System.exit(1);
+        }
         driver = ConfigurationManager.getInstance().GetValues(psqlPropertiesFile,"postgres.driver", "org.postgresql.Driver");
         url = ConfigurationManager.getInstance().GetValues(psqlPropertiesFile,"postgres.url", "jdbc:postgresql://localhost:5432");
         usr = ConfigurationManager.getInstance().GetValues(psqlPropertiesFile,"postgres.username", "test");
