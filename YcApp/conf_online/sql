@@ -1,0 +1,49 @@
+DROP TABLE IF EXISTS "public"."events";
+CREATE TABLE "public"."events" (
+  "id" varchar(4000) NOT NULL,
+  "liveid" varchar(4000),
+  "anchorid" varchar(4000),
+  "topic" varchar(4000),
+  "title" varchar(4000),
+  "starttime" timestamp(6),
+  "type" varchar(4000),
+  "typecode" int8,
+  "userid" varchar(4000),
+  "username" varchar(4000),
+  "body" text,
+  "createtime" timestamp(6),
+  "updatetime" timestamp(6)
+)
+distributed by(liveid,anchorid,starttime);
+ALTER TABLE "public"."events" OWNER TO "yicai";
+ALTER TABLE "public"."events" ADD CONSTRAINT "events_pkey" PRIMARY KEY ("id");
+
+DROP TABLE IF EXISTS "public"."anchorfans";
+CREATE TABLE "public"."anchorfans" (
+  "id" varchar(4000) NOT NULL,
+  "userid" varchar(4000) NOT NULL,
+  "anchorid" varchar(4000),
+  "level" int,
+  "createtime" timestamp(6),
+  "updatetime" timestamp(6)
+)
+distributed by(userid,anchorid);
+ALTER TABLE "public"."anchorfans" OWNER TO "yicai";
+ALTER TABLE "public"."anchorfans" ADD CONSTRAINT "anchorfans_pkey" PRIMARY KEY ("id");
+
+
+DROP TABLE IF EXISTS "public"."fansinfo";
+CREATE TABLE "public"."fansinfo" (
+  "id" varchar(4000) NOT NULL,
+  "userid" varchar(4000) NOT NULL,
+  "username" varchar(4000),
+  "useravatar" varchar(4000),
+  "taoQiHi" int,
+  "apassuser" BOOLEAN,
+  "vipuser" BOOLEAN,
+  "createtime" timestamp(6),
+  "updatetime" timestamp(6)
+)
+distributed by(userid);
+ALTER TABLE "public"."fansinfo" OWNER TO "yicai";
+ALTER TABLE "public"."fansinfo" ADD CONSTRAINT "fansinfo_pkey" PRIMARY KEY ("id");
