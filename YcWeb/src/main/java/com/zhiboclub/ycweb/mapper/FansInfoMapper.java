@@ -9,16 +9,16 @@ import org.apache.ibatis.annotations.Select;
 public interface FansInfoMapper {
 
 
-    @Select("select * from fansinfo where userid=#{userid}")
+    @Select("select * from fansinfo where \"userId\"=#{userid}")
     @Results({
-            @Result(column ="userid",property = "userId"),
-            @Result(column ="username",property = "userName"),
-            @Result(column ="useravatar",property = "userAvatar"),
-            @Result(column ="taoQiHi",property = "taoQiHi"),
-            @Result(column ="apassuser",property = "aPassUser"),
-            @Result(column ="vipuser",property = "vipUser"),
-            @Result(column ="createtime",property = "createTime"),
-            @Result(column ="updatetime",property = "updateTime")
+            @Result(column ="userId",property = "userId"),
+            @Result(column ="userName",property = "userName"),
+            @Result(column ="userAvatar",property = "userAvatar"),
+            @Result(column ="taoqi",property = "taoQi"),
+            @Result(column ="apass",property = "aPass"),
+            @Result(column ="vip",property = "vip"),
+            @Result(column ="createdAt",property = "createAt"),
+            @Result(column ="updatedAt",property = "updateAt")
     })
-    public FansInfo getByid(String userid);
+    FansInfo getByid(String userid);
 }

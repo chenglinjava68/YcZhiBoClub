@@ -2,6 +2,7 @@ package com.zhiboclub.ycapp.DBopts;
 
 import java.io.*;
 import java.sql.*;
+import java.util.*;
 
 import org.apache.log4j.PropertyConfigurator;
 import org.postgresql.copy.CopyManager;
@@ -148,6 +149,32 @@ public class PGCopyInUtils {
                 }
             }
         }
+    }
+
+
+    //查询方法
+    public ResultSet query(String sql) throws SQLException {
+        pstmt = connection.prepareStatement(sql);
+        rs = pstmt.executeQuery();
+        return rs;
+    }
+
+    //ResultSet转换成list
+    public List resultSetToList(ResultSet rs) throws java.sql.SQLException {
+        if (rs == null)
+            return Collections.EMPTY_LIST;
+        ResultSetMetaData md = rs.getMetaData(); //得到结果集(rs)的结构信息，比如字段数、字段名等
+        int columnCount = md.getColumnCount(); //返回此 ResultSet 对象中的列数
+        List list = new ArrayList();
+        Map rowData;
+        while (rs.next()) {
+            rowData = new HashMap(columnCount);
+            for (int i = 1; i <= columnCount; i++) {
+                rowData.put(md.getColumnName(i), rs.getObject(i));
+            }
+            list.add(rowData);
+        }
+        return list;
     }
 
     /**

@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.sql.Timestamp;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 @RestController
 public class EventsController {
@@ -107,5 +109,19 @@ public class EventsController {
         map.put("startTime", events.getStartTime().getTime());
         map.put("endTime",events.getCreateTime().getTime());
         return JsonData.buildSuccess(map);
+    }
+
+    /**
+     * 直播时间段用户流向情况
+     * @param liveid
+     * @return
+     * http://localhost:8000/get_liveid_timerange_user?liveid=230338877811
+     */
+    @GetMapping("/get_liveid_timerange_user")
+    Object getEventsTimeUsers(String liveid){
+        Events events = eventsService.getEventsTimeRange(liveid);
+        List<Events> eventsall = eventsService.getEventsTimeUsers(liveid,events.getStartTime(),events.getCreateTime());
+
+        return JsonData.buildSuccess(eventsall.size());
     }
 }

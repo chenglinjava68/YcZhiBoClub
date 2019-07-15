@@ -7,6 +7,8 @@ import org.apache.kafka.clients.producer.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -61,17 +63,27 @@ public class KafkaProducers extends Thread {
 
     public static void main(String[] args) {
         LOG.info("send message begin.");
+        List<String> l = new ArrayList();
+        l.add("53224092");
+        l.add("713004165");
+        l.add("799282621");
+        List<String> lids = new ArrayList();
+        lids.add("230734135125");
+        lids.add("230577279604");
+        lids.add("230703875007");
+        for (int i = 1; i <= 100000; i++) {
+            for (String lid:lids)
+            for(String li:l) {
+                ProducerRecord<String, String> msg = new ProducerRecord<String, String>(topic, "{\"liveId\":\""+lid+"\",\"anchorId\":\"3599178445\",\"topic\":\"e3d45e51-41dc-4f1e-af47-a22b54a3fe37\",\"title\":\"二手LV古驰香奈儿\",\"type\":\"txt\",\"typeCode\":10005,\"user\":{\"userId\":\""+li+"\",\"userName\":\"mts_hua\"},\"body\":{\"txt\":{\"totalCount\":" + i + ",\"onlineCount\":" + i + ",\"addUsers\":{\"369828135\":\"mts_hua\",\"866264412\":\"tb1833817_2012\"},\"pageViewCount\":\"" + i + "\"}},\"startTime\":1562894979000}");
+                ProducerRecord<String, String> msg1 = new ProducerRecord<String, String>(topic, "{\"liveId\":\""+lid+"\",\"anchorId\":\"3599178445\",\"topic\":\"e3d45e51-41dc-4f1e-af47-a22b54a3fe37\",\"title\":\"二手LV古驰香奈儿\",\"type\":\"join\",\"typeCode\":10005,\"user\":{\"userId\":\""+li+"\",\"userName\":\"mts_hua\"},\"body\":{\"join\":{\"totalCount\":" + i + ",\"onlineCount\":" + i + ",\"addUsers\":{\"369828135\":\"mts_hua\",\"866264412\":\"tb1833817_2012\"},\"pageViewCount\":\"" + i + "\"}},\"startTime\":1562894979000}");
 
-        EventsMesgInfo info = new EventsMesgInfo();
-        for (int i = 1; i <= 10; i++) {
-            info.setTypeCode(i);
-            info.setBody("value_你好_" + i);
-            ProducerRecord<String, String> msg = new ProducerRecord<String, String>(topic, JSON.toJSONString(info));
-
-            KafkaProducers.getInstance().send(msg);
-            LOG.info("发送消息成功：" + msg.value());
+                KafkaProducers.getInstance().send(msg);
+                KafkaProducers.getInstance().send(msg1);
+                System.out.println("发送消息成功：" + msg.value());
+                System.out.println("发送消息成功：" + msg1.value());
+            }
             try {
-                Thread.sleep(1000);
+                Thread.sleep(3000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

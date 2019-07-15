@@ -49,10 +49,10 @@ public interface EventsMapper {
      */
 
     @Select("select * from (select  \"liveId\",\"anchorId\",\"userId\",title,\"startTime\",\"createdAt\" from events WHERE \"userId\""+
-        "in (select a.\"userId\" from "+
-        "(select distinct \"liveId\",\"userId\" from events where \"liveId\"=#{liveid})a\n"+
-        "join (select distinct \"liveId\",\"userId\" from events where \"liveId\" !=#{liveid} and \"createdAt\" > '#{starttime}' AND \"createdAt\" < '#{endtime}')b"+
-        "ON"+
+        " in (select a.\"userId\" from "+
+        "(select distinct \"liveId\",\"userId\" from events where \"liveId\"=${liveid})a\n"+
+        "join (select distinct \"liveId\",\"userId\" from events where \"liveId\" !=${liveid} and \"createdAt\" > '${starttime}' AND \"createdAt\" < '${endtime}')b"+
+        " ON "+
         "a.\"userId\"=b.\"userId\")"+
         ")c ORDER BY \"userId\",\"createdAt\"")
     @Results({
@@ -63,10 +63,9 @@ public interface EventsMapper {
             @Result(column = "startTime", property = "startTime"),
 //            @Result(column = "type", property = "type"),
 //            @Result(column = "typecode", property = "typeCode"),
-//            @Result(column ="userid",property = "user" ,one = @One(select = "com.zhiboclub.ycweb.mapper.FansInfoMapper.getByid")),
 //            @Result(column = "body", property = "body"),
             @Result(column = "createdAt", property = "createTime"),
-            @Result(column = "updatetime", property = "updateTime")
+            @Result(column = "updateAt", property = "updateTime")
     })
     List<Events> getEventsTimeUsers(String liveid, Timestamp starttime, Timestamp endtime);
 }

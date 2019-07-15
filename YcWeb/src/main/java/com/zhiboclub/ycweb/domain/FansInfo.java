@@ -13,10 +13,10 @@ public class FansInfo implements Serializable {
     private String userId;
     private String userName;
     private String userAvatar;
-    private Integer taoQiHi;
-    private Boolean aPassUser;
-    private Boolean vipUser;
-    private Timestamp createTime;
-    private Timestamp updateTime;
+    private Integer taoQi;
+    private Boolean aPass;
+    private Boolean vip;
+    private Timestamp createAt;
+    private Timestamp updateAt;
 
 }

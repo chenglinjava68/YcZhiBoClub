@@ -6,6 +6,9 @@ import com.zhiboclub.ycweb.service.EventsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.sql.Timestamp;
+import java.util.List;
+
 @Service
 public class EventsServiceImpl implements EventsService {
 
@@ -30,5 +33,10 @@ public class EventsServiceImpl implements EventsService {
     @Override
     public Events getEventsTimeRange(String liveid) {
         return eventsMapper.getEventsTimeRange(liveid);
+    }
+
+    @Override
+    public List<Events> getEventsTimeUsers(String liveid, Timestamp starttime, Timestamp endtime) {
+        return eventsMapper.getEventsTimeUsers(liveid,starttime,endtime);
     }
 }
