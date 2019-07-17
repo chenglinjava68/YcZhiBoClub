@@ -41,8 +41,14 @@ public class TimeManager {
 		String res = String.valueOf(ts);
 		return res;
 	}
+
+
+
+
 	public static void main(String[] args) {
-		System.out.println(timeStampToTime("1562894979000"));
-//		System.out.println(System.currentTimeMillis());
+
+//		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
+		System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));// new Date()为获取当前系统时间
+		System.out.println();
 	}
 }

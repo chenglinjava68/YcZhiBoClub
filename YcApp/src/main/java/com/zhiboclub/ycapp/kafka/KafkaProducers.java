@@ -88,6 +88,13 @@ public class KafkaProducers extends Thread {
                 e.printStackTrace();
             }
         }
+////        String lid = "230703875007";
+//        String lid = "230703875008";
+////        String lid = "230734135125";
+//        String uid = "2494239916";
+
+//        ProducerRecord<String,String> msg = new ProducerRecord<>(topic,"{\"liveId\":\""+lid+"\",\"anchorId\":\"3599178445\",\"topic\":\"e3d45e51-41dc-4f1e-af47-a22b54a3fe37\",\"title\":\"二手LV古驰香奈儿\",\"type\":\"join\",\"typeCode\":10005,\"user\":{\"userId\":\""+uid+"\",\"userName\":\"mts_hua\"},\"body\":{\"txt\":{\"totalCount\":1178,\"onlineCount\":47,\"addUsers\":{\"369828135\":\"mts_hua\",\"866264412\":\"tb1833817_2012\"},\"pageViewCount\":\"12026\"}},\"startTime\":1562894979000}");
+//        KafkaProducers.getInstance().send(msg);
         producer.close(100, TimeUnit.MILLISECONDS);
         LOG.info("send message over.");
     }

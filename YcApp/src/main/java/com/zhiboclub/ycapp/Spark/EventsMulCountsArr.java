@@ -29,11 +29,35 @@ import scala.Tuple2;
  *
  * @author Administrator
  */
-public class EventsMulCounts {
+public class EventsMulCountsArr {
+
+    //监控的主播ID
+    private static HashSet<String> MonLiveId = new HashSet<>();
+
+    //正在直播的观看用户ID
+    private static HashSet<String> AccessingUser = new HashSet<>();
+
+    //已经访问过正在直播的观看用户ID,还未离开直播间
+    private static HashSet<String> AccessedUser = new HashSet<>();
+
+    //已经访问过正在直播的观看用户ID，已离开直播间
+    private static HashSet<String> DepartureUser = new HashSet<>();
+
+    //历史访问直播间ID
+    private static List<String> HistoryAccess = new ArrayList<>();
+
+    //粉丝离开去的直播间ID
+    private static List<String> DepartureAccess = new ArrayList<>();
+
+    static {
+        MonLiveId.add("230703875007");
+        MonLiveId.add("230734135125");
+        MonLiveId.add("230577279604");
+    }
 
     public static void main(String[] args) throws Exception {
 
-        SparkConf conf = new SparkConf().setAppName("YcKafka2SparkUserFlow").setMaster("local[2]");
+        SparkConf conf = new SparkConf().setAppName("YcKafka2SparkUserFlow").setMaster("local[4]");
 
         JavaStreamingContext jssc = new JavaStreamingContext(conf, Durations.seconds(5));
         jssc.checkpoint("/streaming_checkpoint");
@@ -42,7 +66,7 @@ public class EventsMulCounts {
         kafkaParams.put("bootstrap.servers", "127.0.0.1:9092");
         kafkaParams.put("key.deserializer", StringDeserializer.class);
         kafkaParams.put("value.deserializer", StringDeserializer.class);
-        kafkaParams.put("group.id", "test2");
+        kafkaParams.put("group.id", "test1");
         kafkaParams.put("enable.auto.commit", false);
 
         // 构建topic set
@@ -70,9 +94,7 @@ public class EventsMulCounts {
             String lid = mesginfo.getLiveId();
             String uid = mesginfo.getUser().getUserId();
 
-            list.add("userPath:" + lid + ":" + startTime.getTime() + ":@:" + uid);
-//            list.add("userPath:" + lid + ":" + startTime.getTime() + ":@:" + uid+":"+mesginfo.getCreateTime());
-//            list.add("userPath:" + uid + ":@:" + lid+":"+startTime.getTime());
+            list.add("userPath:@:" + lid + "@" + uid);
 
             if (jb.containsKey("join")) {
                 //更新直播间的pv和uv等
@@ -80,7 +102,7 @@ public class EventsMulCounts {
                 String onlineCount = join.get("onlineCount").toString();
                 String pageViewCount = join.get("pageViewCount").toString();
                 String totalCount = join.get("totalCount").toString();
-                list.add("pvuv:" + lid +":"+startTime.getTime()+ ":@:" + onlineCount + ":" + pageViewCount + ":" + totalCount);
+                list.add("pvuv:" + lid + ":" + startTime.getTime() + ":@:" + onlineCount + ":" + pageViewCount + ":" + totalCount);
 //                System.out.println("更新数据库" + "直播id：" + lid + "；在线人数：" + onlineCount + "；Pv" + pageViewCount + "；Uv：" + totalCount);
             } else if (jb.containsKey("txt")) {
                 //统计评论数和评论人数
@@ -107,10 +129,10 @@ public class EventsMulCounts {
         });
 
         // 统计第一个指标：实时页面pv，uv，online人数
-        calculatePagePv(words);
+//        calculatePagePv(words);
 
         // 统计评论数和评论人数
-        calculateTxt(words);
+//        calculateTxt(words);
 
         //统计直播间粉丝流向
         calculateUserPath(words);
@@ -147,7 +169,7 @@ public class EventsMulCounts {
                 if (tuple2._1.startsWith("pvuv")) {
                     System.out.println("更新数据库为" + tuple2);
                     String curtime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
-                    try{
+                    try {
                         Object[] object = new Object[7];
                         object[0] = tuple2._1.split(":")[1];
                         object[1] = Timestamp.valueOf(TimeManager.timeStampToTime(tuple2._1.split(":")[2]));
@@ -156,8 +178,8 @@ public class EventsMulCounts {
                         object[4] = Integer.parseInt(tuple2._2.split(":")[2]);
                         object[5] = Timestamp.valueOf(curtime);
                         object[6] = Timestamp.valueOf(curtime);
-                        PGCopyInUtils.getinstance().PGupdate("INSERT INTO \"public\".\"eventscount\"(\"liveId\", \"startTime\", \"onlineCount\", \"pageViewCount\", \"totalCount\", \"createdAt\", \"updatedAt\") VALUES (?, ?, ?, ?, ?, ?, ?);",object);
-                    }catch (Exception e){
+                        PGCopyInUtils.getinstance().PGupdate("INSERT INTO \"public\".\"eventscount\"(\"liveId\", \"startTime\", \"onlineCount\", \"pageViewCount\", \"totalCount\", \"createdAt\", \"updatedAt\") VALUES (?, ?, ?, ?, ?, ?, ?);", object);
+                    } catch (Exception e) {
                         System.out.println("________getRS sql:" + e.getMessage());
                         Object[] updateobject = new Object[5];
                         updateobject[0] = Integer.parseInt(tuple2._2.split(":")[0]);
@@ -165,7 +187,7 @@ public class EventsMulCounts {
                         updateobject[2] = Integer.parseInt(tuple2._2.split(":")[2]);
                         updateobject[3] = Timestamp.valueOf(curtime);
                         updateobject[4] = tuple2._1.split(":")[1];
-                        PGCopyInUtils.getinstance().PGupdate("UPDATE \"public\".\"eventscount\" SET \"onlineCount\" = ?, \"pageViewCount\" = ?, \"totalCount\" = ?,  \"updatedAt\" = ? WHERE \"liveId\"=?",updateobject);
+                        PGCopyInUtils.getinstance().PGupdate("UPDATE \"public\".\"eventscount\" SET \"onlineCount\" = ?, \"pageViewCount\" = ?, \"totalCount\" = ?,  \"updatedAt\" = ? WHERE \"liveId\"=?", updateobject);
                     }
                 }
             });
@@ -221,43 +243,42 @@ public class EventsMulCounts {
                 String curtime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
                 if (tuple2._1.startsWith("txtNum")) {
                     System.out.println("更新数据库评论数" + tuple2);
-                    try{
+                    try {
                         Object[] object = new Object[5];
                         object[0] = tuple2._1.split(":")[1];
                         object[1] = Timestamp.valueOf(tuple2._1.split(":")[2]);
                         object[2] = tuple2._2;
                         object[3] = Timestamp.valueOf(curtime);
                         object[4] = Timestamp.valueOf(curtime);
-                        PGCopyInUtils.getinstance().PGupdate("INSERT INTO \"public\".\"eventscount\"(\"liveId\", \"startTime\", \"txtNum\", \"createdAt\", \"updatedAt\") VALUES (?, ?, ?, ?, ?);",object);
-                    }catch (Exception e){
+                        PGCopyInUtils.getinstance().PGupdate("INSERT INTO \"public\".\"eventscount\"(\"liveId\", \"startTime\", \"txtNum\", \"createdAt\", \"updatedAt\") VALUES (?, ?, ?, ?, ?);", object);
+                    } catch (Exception e) {
                         System.out.println("________getRS sql:" + e.getMessage());
                         Object[] updateobject = new Object[3];
                         updateobject[0] = tuple2._2;
                         updateobject[1] = Timestamp.valueOf(curtime);
                         updateobject[2] = tuple2._1.split(":")[1];
-                        PGCopyInUtils.getinstance().PGupdate("UPDATE \"public\".\"eventscount\" SET \"txtNum\" = ? ,\"updatedAt\" = ? WHERE \"liveId\" = ?;",updateobject);
+                        PGCopyInUtils.getinstance().PGupdate("UPDATE \"public\".\"eventscount\" SET \"txtNum\" = ? ,\"updatedAt\" = ? WHERE \"liveId\" = ?;", updateobject);
                     }
                 }
                 if (tuple2._1.startsWith("txtPeopleNum")) {
                     System.out.println("更新数据库评论人数" + tuple2);
-                    try{
+                    try {
                         Object[] object = new Object[5];
                         object[0] = tuple2._1.split(":")[1];
                         object[1] = Timestamp.valueOf(tuple2._1.split(":")[2]);
                         object[2] = tuple2._2;
                         object[3] = Timestamp.valueOf(curtime);
                         object[4] = Timestamp.valueOf(curtime);
-                        PGCopyInUtils.getinstance().PGupdate("INSERT INTO \"public\".\"eventscount\"(\"liveId\", \"startTime\", \"txtPeopleNum\", \"createdAt\", \"updatedAt\") VALUES (?, ?, ?, ?, ?);",object);
-                    }catch (Exception e){
+                        PGCopyInUtils.getinstance().PGupdate("INSERT INTO \"public\".\"eventscount\"(\"liveId\", \"startTime\", \"txtPeopleNum\", \"createdAt\", \"updatedAt\") VALUES (?, ?, ?, ?, ?);", object);
+                    } catch (Exception e) {
                         System.out.println("________getRS sql:" + e.getMessage());
                         Object[] updateobject = new Object[3];
                         updateobject[0] = tuple2._2;
                         updateobject[1] = Timestamp.valueOf(curtime);
                         updateobject[2] = tuple2._1.split(":")[1];
-                        PGCopyInUtils.getinstance().PGupdate("UPDATE \"public\".\"eventscount\" SET \"txtPeopleNum\" = ? ,\"updatedAt\" = ? WHERE \"liveId\" = ?;",updateobject);
+                        PGCopyInUtils.getinstance().PGupdate("UPDATE \"public\".\"eventscount\" SET \"txtPeopleNum\" = ? ,\"updatedAt\" = ? WHERE \"liveId\" = ?;", updateobject);
                     }
                 }
-
 
 
             });
@@ -269,69 +290,120 @@ public class EventsMulCounts {
      */
     private static void calculateUserPath(JavaDStream accessDStream) {
 
-        List<String> monLiveId = new ArrayList<>();
-        monLiveId.add("230703875007");
-        monLiveId.add("230734135125");
-        monLiveId.add("230577279604");
+        //消息结构："userPath:@:lid@uid"
 
+        //过滤符合条件的事件
         accessDStream = accessDStream.filter((Function<String, Boolean>) v1 -> {
             if (v1.startsWith("userPath")) {
-                if (monLiveId.contains(v1.split(":")[1]))
-                    return true;
+                //[ liveid1@userId@liveid2 liveid1@userId]
+                if (DepartureAccess.contains(v1.split(":@:")[1])) {
+                    System.out.println("丢弃1：该粉丝已经离开过房间");
+                    return false;
+                } else {
+                    if (AccessedUser.contains(v1.split(":@:")[1])) {
+                        System.out.println("丢弃2：访问列表里面有相同的liveid@userid");
+                        return false;
+                    } else {
+                        if (AccessedUser.contains(v1.split(":@:")[1].split("@")[1])) {
+                            System.out.println("进入1：该粉丝访问过其他的直播间");
+                            return true;
+                        } else {
+                            if (MonLiveId.contains(v1.split(":@:")[1].split("@")[0])) {
+                                System.out.println("进入2：该liveId存在监控");
+                                return true;
+                            } else {
+                                System.out.println("丢弃3：不再监控范围内，也没有该监控的liveId上有这个粉丝");
+                                return false;
+                            }
+                        }
+
+                    }
+                }
+            } else {
+                return false;
             }
-            return false;
         });
 
-        JavaPairDStream<String, String> asplit = accessDStream.mapToPair((PairFunction<String, String, String>) word -> {
-            return new Tuple2<>(word.split(":@:")[0], word.split(":@:")[1]);
-        });
+        JavaPairDStream total = accessDStream.mapToPair((PairFunction<String, String, String>) word ->
+                new Tuple2<>(word.split(":@:")[1].split("@")[0], word.split(":@:")[1].split("@")[1])
+        );
 
-
-        JavaPairDStream<String, Iterable<String>> total = asplit.groupByKey();
-
-        total.foreachRDD((VoidFunction2<JavaPairRDD<String, Iterable<String>>, Time>) (rdd, time) ->
-        {
-            rdd.foreach((VoidFunction<Tuple2<String, Iterable<String>>>) tuple2 -> {
-
-                HashSet<String> uIdonly = new HashSet();
-                Iterator iter = tuple2._2.iterator();
-                while (iter.hasNext()) {
-                    String str = (String) iter.next();
-                    uIdonly.add(str);
-                }
-
-                StringBuilder sb = new StringBuilder();
-                sb.append("select count(\"liveId\") total ,\"liveId\" from (select DISTINCT \"userId\",\"liveId\" from events where ");
-                for (String i : uIdonly) {
-                   sb.append("\"userId\"="+ i + " or ");
-                }
-                sb.delete(sb.length()-3,sb.length()-1);
-                sb.append(" and \"startTime\" < '"+TimeManager.timeStampToTime(tuple2._1.split(":")[2])+"')a GROUP BY \"liveId\" ORDER BY total desc limit 10");
-                System.out.println(sb.toString());
-                ResultSet rs = PGCopyInUtils.getinstance().query(sb.toString());
-                Map<String,Integer> map = new HashMap<>();
-                while(rs.next()){
-//                    System.out.println("我的直播ID:"+tuple2._1+"直播ID:"+rs.getString("liveId")+"总计:"+rs.getString("total"));
-                    map.put(rs.getString("liveId"),rs.getInt("total"));
-                }
-                String curtime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
-                try{
-                    Object[] object = new Object[5];
-                    object[0] = tuple2._1.split(":")[1];
-                    object[1] = Timestamp.valueOf(tuple2._1.split(":")[2]);
-                    object[2] = JSON.toJSONString(map);
-                    object[3] = Timestamp.valueOf(curtime);
-                    object[4] = Timestamp.valueOf(curtime);
-                    PGCopyInUtils.getinstance().PGupdate("INSERT INTO \"public\".\"eventscount\"(\"liveId\", \"startTime\", \"userLivePath\", \"createdAt\", \"updatedAt\") VALUES (?, ?, ?, ?, ?);",object);
-                }catch (Exception e){
-                    System.out.println("________getRS sql:" + e.getMessage());
-                    Object[] updateobject = new Object[3];
-                    updateobject[0] = JSON.toJSONString(map);
-                    updateobject[1] = Timestamp.valueOf(curtime);
-                    updateobject[2] = tuple2._1.split(":")[1];
-                    PGCopyInUtils.getinstance().PGupdate("UPDATE \"public\".\"eventscount\" SET \"userLivePath\" = ? ,\"updatedAt\" = ? WHERE \"liveId\" = ?;",updateobject);
+        total.foreachRDD((VoidFunction2<JavaPairRDD<String, String>, Time>) (rdd, time) -> {
+            rdd.foreach((VoidFunction<Tuple2<String, String>>) tuple2 -> {
+                if (AccessedUser.contains(tuple2._2)) {
+                    if (MonLiveId.contains(tuple2._1)) {
+                        System.out.println("即在监控中，也在访问中");
+                        AccessingUser.add(tuple2._1 + "@" + tuple2._2);
+                        AccessingUser.add(tuple2._2);
+                        System.out.println("查询数据库用户ID为" + tuple2._2 + "；并将查询的结果放到HistoryAccess中去");
+                        ResultSet rs = PGCopyInUtils.getinstance().query("select distinct \"liveId\" from events where \"userId\" = "+tuple2._2+" ORDER BY \"startTime\" desc limit 2;");
+                        if (rs != null){
+                            while (rs.next()) {
+                                System.out.println("我的直播ID:" + tuple2._1 + "之前去过直播ID:" + rs.getString("liveId"));
+                                HistoryAccess.add(tuple2._1+"@"+tuple2._2+"@"+rs.getString("liveId"));
+                            }
+                            AccessedUser.addAll(AccessingUser);
+                            for (String id : AccessedUser) {
+                                if(id.split("@").length == 1){
+                                    continue;
+                                }
+                                if (id.split("@")[1].equals(tuple2._2) && !id.split("@")[0].equals(tuple2._1)) {
+                                    AccessedUser.remove(id);
+                                    AccessingUser.remove(id);
+                                    DepartureAccess.add(id + "@" + tuple2._1);
+                                    DepartureAccess.add(id);
+                                    System.out.println("这个粉丝访问该直播间已经离开去了其他监控的直播间" + id + "@" + tuple2._1);
+                                    break;
+                                }
+                            }
+                        }
+                    } else {
+                        //在访问列表c中，不在监控a中，说明这是一个离开的event
+                        System.out.println("不在监控中，在访问中");
+                        for (String id : AccessedUser) {
+                            if (id.split("@")[1].equals(tuple2._2)) {
+                                AccessedUser.remove(id);
+                                AccessedUser.remove(tuple2._2);
+                                AccessingUser.remove(id);
+                                AccessingUser.remove(tuple2._2);
+                                DepartureAccess.add(id + "@" + tuple2._1);
+                                DepartureAccess.add(id);
+                                System.out.println("这个粉丝访问该直播间已经离开去了" + id + "@" + tuple2._1);
+                                break;
+                            }
+                        }
+                    }
+                } else {
+                    if (MonLiveId.contains(tuple2._1)) {
+                        System.out.println("处于监控的LiveID，属于第一次访问这场直播");
+                        AccessingUser.add(tuple2._1 + "@" + tuple2._2);
+                        AccessingUser.add(tuple2._2);
+                        System.out.println("查询数据库用户ID为" + tuple2._2 + "；并将查询的结果放到HistoryAccess中去");
+                        ResultSet rs = PGCopyInUtils.getinstance().query("select distinct \"liveId\" from events where \"userId\" = "+tuple2._2+" ORDER BY \"startTime\" desc limit 2;");
+                        if(rs != null){
+                            while (rs.next()) {
+                                System.out.println("我的直播ID:" + tuple2._1 + "之前去过直播ID:" + rs.getString("liveId"));
+                                HistoryAccess.add(tuple2._1+"@"+tuple2._2+"@"+rs.getString("liveId"));
+                            }
+                            AccessedUser.addAll(AccessingUser);
+                        }
+                    }
                 }
             });
+
+            for(String i:AccessingUser){
+                System.out.println("正在访问+++++++"+i);
+            }
+            for(String i:AccessedUser){
+                System.out.println("访问过了+++++++"+i);
+            }
+            for(String i:HistoryAccess){
+                System.out.println("历史访问+++++++"+i);
+            }
+            for(String i:DepartureAccess){
+                System.out.println("离开到哪+++++++"+i);
+            }
         });
+
     }
 }
