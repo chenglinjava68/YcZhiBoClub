@@ -107,10 +107,10 @@ public class EventsMulCounts {
         });
 
         // 统计第一个指标：实时页面pv，uv，online人数
-        calculatePagePv(words);
+//        calculatePagePv(words);
 
         // 统计评论数和评论人数
-        calculateTxt(words);
+//        calculateTxt(words);
 
         //统计直播间粉丝流向
         calculateUserPath(words);

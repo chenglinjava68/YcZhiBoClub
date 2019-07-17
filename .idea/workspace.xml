@@ -2,17 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f1918366-e1b6-41c1-8d39-eee83bb8e8ee" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/Spark/EventsMulCountsArr.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/test/test_dbout.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/test/test_hashset.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/Spark/SparkPostgresqlJdbc.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/kafka/EventsMulCountsBroadcast.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_scala_lang_scala_library_2_12_8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YcApp/YcApp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/YcApp/YcApp.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YcApp/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/YcApp/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/DBopts/PGCopyInUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/DBopts/PGCopyInUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/Spark/EventsMulCounts.java" beforeDir="false" afterPath="$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/Spark/EventsMulCounts.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/Utils/TimeManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/Utils/TimeManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/kafka/KafkaProducers.java" beforeDir="false" afterPath="$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/kafka/KafkaProducers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/Spark/EventsMulCountsArr.java" beforeDir="false" afterPath="$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/Spark/EventsMulCountsArr.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YcWeb/YcWeb.iml" beforeDir="false" afterPath="$PROJECT_DIR$/YcWeb/YcWeb.iml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/YcWeb/target/" />
     <ignored path="$PROJECT_DIR$/YcApp/target/" />
+    <ignored path="$PROJECT_DIR$/YcTest/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,25 +32,62 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/Spark/EventsMulCountsArr.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/Spark/EventsMulCounts.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="61" column="89" lean-forward="true" selection-start-line="61" selection-start-column="89" selection-end-line="61" selection-end-column="89" />
+            <state relative-caret-position="-4">
+              <caret line="285" column="39" lean-forward="true" selection-start-line="285" selection-start-column="39" selection-end-line="285" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#calculatePagePv#0;class#EventsMulCountsArr#0" />
-                <element signature="method#calculateTxt#0;class#EventsMulCountsArr#0" />
+                <element signature="method#calculatePagePv#0;class#EventsMulCounts#0" />
+                <element signature="method#calculateTxt#0;class#EventsMulCounts#0" />
+                <marker date="1563358381530" expanded="true" signature="6648:8314" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/DBopts/PGCopyInUtils.java">
+        <entry file="file://$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/kafka/KafkaProducers.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
-              <caret line="160" column="38" selection-start-line="160" selection-start-column="38" selection-end-line="160" selection-end-column="38" />
+            <state relative-caret-position="189">
+              <caret line="72" column="33" lean-forward="true" selection-start-line="72" selection-start-column="33" selection-end-line="72" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/Spark/SparkPostgresqlJdbc.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="27" column="308" lean-forward="true" selection-start-line="27" selection-start-column="41" selection-end-line="27" selection-end-column="308" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/Spark/EventsMulCountFromKafka.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2377">
+              <caret line="41" column="29" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/Spark/EventsMulCount.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2774">
+              <caret line="306" lean-forward="true" selection-start-line="306" selection-end-line="306" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/Spark/EventsUserFlowWithSpark.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-303">
+              <caret line="85" column="61" selection-start-line="85" selection-start-column="45" selection-end-line="85" selection-end-column="61" />
             </state>
           </provider>
         </entry>
@@ -66,6 +108,7 @@
       <find>=</find>
       <find>{pvuv:230400232970=47:12026:1178}</find>
       <find>Optional</find>
+      <find>.value()</find>
     </findStrings>
     <replaceStrings>
       <replace>LOG.info</replace>
@@ -87,7 +130,6 @@
         <option value="$PROJECT_DIR$/YcApp/conf_online/fans_consumer.properties" />
         <option value="$PROJECT_DIR$/YcApp/conf/fans_consumer.properties" />
         <option value="$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/Application.java" />
-        <option value="$PROJECT_DIR$/YcApp/pom.xml" />
         <option value="$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/runApplication.java" />
         <option value="$PROJECT_DIR$/YcApp/src/main/resources/log4j.properties" />
         <option value="$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/kafka/OptionsCli.java" />
@@ -116,11 +158,19 @@
         <option value="$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/Spark/a.scala" />
         <option value="$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/test/test_dbout.java" />
         <option value="$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/Utils/TimeManager.java" />
-        <option value="$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/Spark/EventsMulCounts.java" />
         <option value="$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/test/test_hashset.java" />
         <option value="$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/kafka/KafkaProducers.java" />
         <option value="$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/DBopts/PGCopyInUtils.java" />
         <option value="$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/Spark/EventsMulCountsArr.java" />
+        <option value="$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/kafka/EventsMulCountsBroadcast.java" />
+        <option value="$PROJECT_DIR$/YcTest/pom.xml" />
+        <option value="$PROJECT_DIR$/YcTest/src/main/java/test.java" />
+        <option value="$PROJECT_DIR$/YcTest/src/main/java/t.scala" />
+        <option value="$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/Spark/EventsCountWithSparkSQL.java" />
+        <option value="$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/Spark/sparksql.java" />
+        <option value="$PROJECT_DIR$/YcApp/pom.xml" />
+        <option value="$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/Spark/EventsMulCounts.java" />
+        <option value="$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/Spark/SparkPostgresqlJdbc.java" />
       </list>
     </option>
   </component>
@@ -160,8 +210,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -178,7 +226,7 @@
               <item name="YcZhiBoClub" type="b2602c69:ProjectViewProjectNode" />
               <item name="YcZhiBoClub" type="462c0819:PsiDirectoryNode" />
               <item name="YcApp" type="462c0819:PsiDirectoryNode" />
-              <item name="conf_online" type="462c0819:PsiDirectoryNode" />
+              <item name="conf" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="YcZhiBoClub" type="b2602c69:ProjectViewProjectNode" />
@@ -209,16 +257,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="ycapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="YcZhiBoClub" type="b2602c69:ProjectViewProjectNode" />
-              <item name="YcZhiBoClub" type="462c0819:PsiDirectoryNode" />
-              <item name="YcApp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ycapp" type="462c0819:PsiDirectoryNode" />
-              <item name="DBopts" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="YcZhiBoClub" type="b2602c69:ProjectViewProjectNode" />
@@ -240,31 +278,13 @@
               <item name="ycapp" type="462c0819:PsiDirectoryNode" />
               <item name="Spark" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="YcZhiBoClub" type="b2602c69:ProjectViewProjectNode" />
-              <item name="YcZhiBoClub" type="462c0819:PsiDirectoryNode" />
-              <item name="YcApp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ycapp" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="YcZhiBoClub" type="b2602c69:ProjectViewProjectNode" />
-              <item name="YcZhiBoClub" type="462c0819:PsiDirectoryNode" />
-              <item name="YcApp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ycapp" type="462c0819:PsiDirectoryNode" />
-              <item name="Utils" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="CatdeaLogs" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -279,19 +299,23 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/YcApp/conf_online" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/YcApp/conf" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/YcApp/conf_online" />
       <recent name="$PROJECT_DIR$/YcApp/src/main" />
       <recent name="$PROJECT_DIR$/YcApp" />
       <recent name="$PROJECT_DIR$/YcApp/conf" />
       <recent name="$PROJECT_DIR$/YcApp/src/main/resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/YcApp/conf" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -306,9 +330,9 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.EventsMulCountsArr">
-    <configuration name="EventsMulCounts" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.zhiboclub.ycapp.Spark.EventsMulCounts" />
+  <component name="RunManager" selected="Application.SparkPostgresqlJdbc">
+    <configuration name="EventsMulCountFromKafka" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.zhiboclub.ycapp.Spark.EventsMulCountFromKafka" />
       <module name="YcApp" />
       <extension name="coverage">
         <pattern>
@@ -320,8 +344,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EventsMulCountsArr" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.zhiboclub.ycapp.Spark.EventsMulCountsArr" />
+    <configuration name="EventsMulCounts" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.zhiboclub.ycapp.Spark.EventsMulCounts" />
       <module name="YcApp" />
       <extension name="coverage">
         <pattern>
@@ -346,12 +370,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TimeManager" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.zhiboclub.ycapp.Utils.TimeManager" />
+    <configuration name="SparkPostgresqlJdbc" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.zhiboclub.ycapp.Spark.SparkPostgresqlJdbc" />
       <module name="YcApp" />
+      <option name="VM_PARAMETERS" value="-Dspark.master=local" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.zhiboclub.ycapp.Utils.*" />
+          <option name="PATTERN" value="com.zhiboclub.ycapp.Spark.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -359,33 +384,41 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="test_hashset" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.zhiboclub.ycapp.test.test_hashset" />
+    <configuration name="sparksql" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.zhiboclub.ycapp.Spark.sparksql" />
       <module name="YcApp" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.zhiboclub.ycapp.test.*" />
+          <option name="PATTERN" value="com.zhiboclub.ycapp.Spark.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="YcApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="YcWeb" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.zhiboclub.ycweb.YcApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.KafkaProducers" />
+      <item itemvalue="Application.EventsMulCountFromKafka" />
+      <item itemvalue="Application.sparksql" />
+      <item itemvalue="Application.SparkPostgresqlJdbc" />
       <item itemvalue="Application.EventsMulCounts" />
-      <item itemvalue="Application.TimeManager" />
-      <item itemvalue="Application.EventsMulCountsArr" />
-      <item itemvalue="Application.test_hashset" />
+      <item itemvalue="Application.KafkaProducers" />
+      <item itemvalue="Spring Boot.YcApplication" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.EventsMulCountsArr" />
-        <item itemvalue="Application.KafkaProducers" />
-        <item itemvalue="Application.test_hashset" />
+        <item itemvalue="Application.SparkPostgresqlJdbc" />
         <item itemvalue="Application.EventsMulCounts" />
-        <item itemvalue="Application.TimeManager" />
+        <item itemvalue="Application.KafkaProducers" />
+        <item itemvalue="Application.sparksql" />
+        <item itemvalue="Application.EventsMulCountFromKafka" />
       </list>
     </recent_temporary>
   </component>
@@ -405,6 +438,10 @@
       <workItem from="1562944303725" duration="141000" />
       <workItem from="1562944586826" duration="79102000" />
       <workItem from="1563238034882" duration="44652000" />
+      <workItem from="1563324427141" duration="15171000" />
+      <workItem from="1563347644361" duration="439000" />
+      <workItem from="1563348111416" duration="1514000" />
+      <workItem from="1563349771962" duration="9307000" />
     </task>
     <task id="LOCAL-00001" summary="初始化app和web两个项目&#10;web中添加events表的查询接口">
       <created>1562809797585</created>
@@ -448,18 +485,39 @@
       <option name="project" value="LOCAL" />
       <updated>1563187918289</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="完善events表粉丝流向统计">
+      <created>1563324537075</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1563324537075</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="All_in_YcApp - 2019.07.17 at 14h 15m 50s.xml">
+      <configuration name="All in YcApp" configurationId="JUnit" />
+    </history-entry>
+  </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="168736000" />
+    <option name="totallyTimeSpent" value="195167000" />
+  </component>
+  <component name="TodoView" selected-index="3">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="947" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Web" order="0" sideWeight="0.50088185" side_tool="true" weight="0.2008547" />
-      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.49911818" visible="true" weight="0.20818071" />
+      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.49911818" visible="true" weight="0.24542125" />
       <window_info id="Structure" order="2" sideWeight="0.50088185" side_tool="true" weight="0.2008547" />
       <window_info id="Designer" order="3" />
       <window_info id="Learn" order="4" />
@@ -467,21 +525,21 @@
       <window_info id="Favorites" order="6" sideWeight="0.50088185" side_tool="true" weight="0.2008547" />
       <window_info id="Capture Tool" order="7" />
       <window_info id="Image Layers" order="8" />
-      <window_info anchor="bottom" id="Spring" order="0" />
+      <window_info anchor="bottom" id="Spring" order="0" weight="0.32932693" />
       <window_info anchor="bottom" id="Messages" order="1" weight="0.328125" />
-      <window_info anchor="bottom" id="Java Enterprise" order="2" />
+      <window_info anchor="bottom" id="Java Enterprise" order="2" weight="0.32932693" />
       <window_info anchor="bottom" id="Duplicates" order="3" weight="0.32978722" />
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Find" order="5" weight="0.32932693" />
-      <window_info anchor="bottom" id="Run" order="6" weight="0.32451922" />
+      <window_info anchor="bottom" id="Run" order="6" weight="0.42908654" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.515625" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="10" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32936978" />
+      <window_info anchor="bottom" id="TODO" order="10" weight="0.32932693" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32932693" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="13" />
-      <window_info anchor="bottom" id="Version Control" order="14" />
+      <window_info anchor="bottom" id="Version Control" order="14" weight="0.32932693" />
       <window_info anchor="bottom" id="Docker" order="15" show_stripe_button="false" />
       <window_info anchor="right" id="Bean Validation" order="0" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
@@ -505,17 +563,12 @@
     <MESSAGE value="完善线上线下的配置，更换log日志的配置文件到外部" />
     <MESSAGE value="完善README" />
     <MESSAGE value="完善events表sparkstreaming的统计&#10;1、统计pv&#10;2、统计uv&#10;3、统计评论数&#10;4、统计评论人数&#10;5、统计粉丝流向" />
-    <option name="LAST_COMMIT_MESSAGE" value="完善events表sparkstreaming的统计&#10;1、统计pv&#10;2、统计uv&#10;3、统计评论数&#10;4、统计评论人数&#10;5、统计粉丝流向" />
+    <MESSAGE value="完善events表粉丝流向统计" />
+    <option name="LAST_COMMIT_MESSAGE" value="完善events表粉丝流向统计" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/Spark/EventsMulCountFromKafka.java</url>
-          <line>67</line>
-          <properties />
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>jar://$MAVEN_REPOSITORY$/org/apache/spark/spark-core_2.12/2.4.3/spark-core_2.12-2.4.3-sources.jar!/org/apache/spark/TaskContextImpl.scala</url>
           <line>102</line>
@@ -536,237 +589,13 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/log4j/log4j/1.2.17/log4j-1.2.17-sources.jar!/org/apache/log4j/spi/LocationInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="142" selection-start-line="142" selection-end-line="142" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/lang/String.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="634" selection-start-line="634" selection-end-line="634" />
-          <folding>
-            <element signature="e#23112#23113#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/postgresql/postgresql/42.2.6/postgresql-42.2.6-sources.jar!/org/postgresql/core/v3/SimpleQuery.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="274" selection-start-line="274" selection-end-line="274" />
-          <folding>
-            <element signature="e#3275#3276#0" expanded="true" />
-            <element signature="e#3313#3314#0" expanded="true" />
-            <element signature="e#8923#8924#0" expanded="true" />
-            <element signature="e#9107#9108#0" expanded="true" />
-            <element signature="e#9148#9149#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/lang/Object.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="36" selection-start-line="36" selection-end-line="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/postgresql/postgresql/42.2.6/postgresql-42.2.6-sources.jar!/org/postgresql/core/ResultHandlerBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/util/concurrent/atomic/AtomicReferenceFieldUpdater.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="449" selection-start-line="449" selection-end-line="449" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/util/logging/Level.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="403" selection-start-line="403" selection-end-line="403" />
-          <folding>
-            <element signature="e#13959#13960#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/postgresql/postgresql/42.2.6/postgresql-42.2.6-sources.jar!/org/postgresql/core/v3/SimpleParameterList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="262" selection-start-line="262" selection-end-line="262" />
-          <folding>
-            <element signature="e#9914#9915#0" expanded="true" />
-            <element signature="e#9960#9961#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/postgresql/postgresql/42.2.6/postgresql-42.2.6-sources.jar!/org/postgresql/core/v3/QueryExecutorImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="292" selection-start-line="292" selection-end-line="292" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/util/logging/Logger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="1720" selection-start-line="1720" selection-end-line="1720" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/postgresql/postgresql/42.2.6/postgresql-42.2.6-sources.jar!/org/postgresql/jdbc/PgStatement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="79" selection-start-line="79" selection-end-line="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/lang/AbstractStringBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="650" selection-start-line="650" selection-end-line="650" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/lang/StringBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="202" selection-start-line="202" selection-end-line="202" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/lang/Enum.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="102" selection-start-line="102" selection-end-line="102" />
-          <folding>
-            <element signature="e#3009#3010#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/Utils/TimeManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="19" column="40" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/kafka/FansConsumers.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-562">
-          <caret line="155" column="73" selection-start-line="155" selection-start-column="73" selection-end-line="155" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/postgresql/postgresql/42.2.6/postgresql-42.2.6-sources.jar!/org/postgresql/core/Parser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="1254" selection-start-line="1254" selection-end-line="1254" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/postgresql/postgresql/42.2.6/postgresql-42.2.6-sources.jar!/org/postgresql/core/CachedQueryCreateAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="40" selection-start-line="40" selection-end-line="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/postgresql/postgresql/42.2.6/postgresql-42.2.6-sources.jar!/org/postgresql/util/LruCache.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="104" column="5" lean-forward="true" selection-start-line="104" selection-start-column="5" selection-end-line="104" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/postgresql/postgresql/42.2.6/postgresql-42.2.6-sources.jar!/org/postgresql/core/QueryExecutorBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="246" selection-start-line="246" selection-end-line="246" />
-          <folding>
-            <element signature="e#4321#4322#0" expanded="true" />
-            <element signature="e#4344#4345#0" expanded="true" />
-            <element signature="e#7020#7021#0" expanded="true" />
-            <element signature="e#9675#9676#0" expanded="true" />
-            <element signature="e#9707#9708#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/postgresql/postgresql/42.2.6/postgresql-42.2.6-sources.jar!/org/postgresql/jdbc/PgPreparedStatement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="77" selection-start-line="77" selection-end-line="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/postgresql/postgresql/42.2.6/postgresql-42.2.6-sources.jar!/org/postgresql/jdbc/PgConnection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="145" selection-start-line="145" selection-end-line="145" />
-          <folding>
-            <element signature="e#12938#12939#0" expanded="true" />
-            <element signature="e#12968#12969#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/alibaba/fastjson/1.2.58/fastjson-1.2.58-sources.jar!/com/alibaba/fastjson/JSON.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="64" column="22" selection-start-line="64" selection-start-column="22" selection-end-line="64" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/spark/spark-streaming_2.12/2.4.3/spark-streaming_2.12-2.4.3-sources.jar!/org/apache/spark/streaming/api/java/JavaDStream.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="44" column="25" selection-start-line="44" selection-start-column="25" selection-end-line="44" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/spark/spark-core_2.12/2.4.3/spark-core_2.12-2.4.3-sources.jar!/org/apache/spark/api/java/JavaPairRDD.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="1042" column="83" selection-start-line="1042" selection-start-column="83" selection-end-line="1042" selection-end-column="83" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/spark/spark-core_2.12/2.4.3/spark-core_2.12-2.4.3-sources.jar!/org/apache/spark/rdd/RDD.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="926" column="56" selection-start-line="926" selection-start-column="56" selection-end-line="926" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/spark/spark-core_2.12/2.4.3/spark-core_2.12-2.4.3-sources.jar!/org/apache/spark/SparkContext.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="2100" column="55" selection-start-line="2100" selection-start-column="55" selection-end-line="2100" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/Spark/EventsMulCounts.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="315" column="17" selection-start-line="311" selection-start-column="16" selection-end-line="315" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1563258379313" expanded="true" signature="6644:8310" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/postgresql/postgresql/42.2.6/postgresql-42.2.6-sources.jar!/org/postgresql/jdbc/PgPreparedStatement.java" />
+    <entry file="jar://$MAVEN_REPOSITORY$/org/postgresql/postgresql/42.2.6/postgresql-42.2.6-sources.jar!/org/postgresql/jdbc/PgConnection.java" />
+    <entry file="jar://$MAVEN_REPOSITORY$/com/alibaba/fastjson/1.2.58/fastjson-1.2.58-sources.jar!/com/alibaba/fastjson/JSON.java" />
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/spark/spark-streaming_2.12/2.4.3/spark-streaming_2.12-2.4.3-sources.jar!/org/apache/spark/streaming/api/java/JavaDStream.scala" />
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/spark/spark-core_2.12/2.4.3/spark-core_2.12-2.4.3-sources.jar!/org/apache/spark/api/java/JavaPairRDD.scala" />
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/spark/spark-core_2.12/2.4.3/spark-core_2.12-2.4.3-sources.jar!/org/apache/spark/rdd/RDD.scala" />
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/spark/spark-core_2.12/2.4.3/spark-core_2.12-2.4.3-sources.jar!/org/apache/spark/SparkContext.scala" />
     <entry file="file://$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/test/test_hashset.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="205">
@@ -777,178 +606,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/kafka/KafkaProducers.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="84" column="17" selection-start-line="65" selection-start-column="9" selection-end-line="89" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/spark/spark-core_2.12/2.4.3/spark-core_2.12-2.4.3-sources.jar!/org/apache/spark/api/java/JavaRDDLike.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="350" selection-start-line="350" selection-end-line="350" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2-sources.jar!/org/apache/commons/collections/map/AbstractHashedMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="436" selection-start-line="436" selection-end-line="436" />
-          <folding>
-            <element signature="e#12833#12834#0" expanded="true" />
-            <element signature="e#12882#12883#0" expanded="true" />
-            <element signature="e#14972#14973#0" expanded="true" />
-            <element signature="e#15020#15021#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2-sources.jar!/org/apache/commons/collections/map/AbstractReferenceMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="233" selection-start-line="233" selection-end-line="233" />
-          <folding>
-            <element signature="e#11000#11001#0" expanded="true" />
-            <element signature="e#11023#11024#0" expanded="true" />
-            <element signature="e#19167#19168#0" expanded="true" />
-            <element signature="e#19259#19260#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/spark/spark-core_2.12/2.4.3/spark-core_2.12-2.4.3-sources.jar!/org/apache/spark/broadcast/TorrentBroadcast.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="95" column="4" selection-start-line="95" selection-start-column="4" selection-end-line="95" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/spark/spark-core_2.12/2.4.3/spark-core_2.12-2.4.3-sources.jar!/org/apache/spark/broadcast/Broadcast.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="69" column="4" selection-start-line="69" selection-start-column="4" selection-end-line="69" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/spark/spark-core_2.12/2.4.3/spark-core_2.12-2.4.3-sources.jar!/org/apache/spark/serializer/Serializer.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/spark/spark-core_2.12/2.4.3/spark-core_2.12-2.4.3-sources.jar!/org/apache/spark/util/ByteBufferInputStream.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="49" column="6" selection-start-line="49" selection-start-column="6" selection-end-line="49" selection-end-column="6" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/spark/spark-core_2.12/2.4.3/spark-core_2.12-2.4.3-sources.jar!/org/apache/spark/serializer/JavaSerializer.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="113" column="4" selection-start-line="113" selection-start-column="4" selection-end-line="113" selection-end-column="4" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/spark/spark-core_2.12/2.4.3/spark-core_2.12-2.4.3-sources.jar!/org/apache/spark/SparkEnv.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="151" column="4" selection-start-line="151" selection-start-column="4" selection-end-line="151" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/spark/spark-core_2.12/2.4.3/spark-core_2.12-2.4.3-sources.jar!/org/apache/spark/storage/memory/MemoryStore.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="570" column="4" selection-start-line="570" selection-start-column="4" selection-end-line="570" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/spark/spark-core_2.12/2.4.3/spark-core_2.12-2.4.3-sources.jar!/org/apache/spark/util/Utils.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="1367" column="6" selection-start-line="1367" selection-start-column="6" selection-end-line="1367" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/spark/spark-core_2.12/2.4.3/spark-core_2.12-2.4.3-sources.jar!/org/apache/spark/executor/Executor.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="615" column="8" selection-start-line="615" selection-start-column="8" selection-end-line="615" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/spark/spark-core_2.12/2.4.3/spark-core_2.12-2.4.3-sources.jar!/org/apache/spark/scheduler/ResultTask.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="89" column="4" selection-start-line="89" selection-start-column="4" selection-end-line="89" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/kafka/kafka-clients/2.3.0/kafka-clients-2.3.0-sources.jar!/org/apache/kafka/common/TopicPartition.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="59" selection-start-line="59" selection-end-line="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/spark/spark-streaming-kafka-0-10_2.12/2.4.0/spark-streaming-kafka-0-10_2.12-2.4.0-sources.jar!/org/apache/spark/streaming/kafka010/KafkaDataConsumer.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="214" column="35" selection-start-line="214" selection-start-column="35" selection-end-line="214" selection-end-column="35" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/spark/spark-streaming-kafka-0-10_2.12/2.4.0/spark-streaming-kafka-0-10_2.12-2.4.0-sources.jar!/org/apache/spark/streaming/kafka010/KafkaRDD.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="239" column="47" selection-start-line="239" selection-start-column="47" selection-end-line="239" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/spark/spark-core_2.12/2.4.3/spark-core_2.12-2.4.3-sources.jar!/org/apache/spark/TaskContext.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="130" column="66" selection-start-line="130" selection-start-column="66" selection-end-line="130" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/spark/spark-core_2.12/2.4.3/spark-core_2.12-2.4.3-sources.jar!/org/apache/spark/TaskContextImpl.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="116" column="6" selection-start-line="116" selection-start-column="6" selection-end-line="116" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/spark/spark-core_2.12/2.4.3/spark-core_2.12-2.4.3-sources.jar!/org/apache/spark/scheduler/Task.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="136" column="8" selection-start-line="136" selection-start-column="8" selection-end-line="136" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/spark/spark-core_2.12/2.4.3/spark-core_2.12-2.4.3-sources.jar!/org/apache/spark/api/java/JavaRDDLike.scala" />
+    <entry file="jar://$MAVEN_REPOSITORY$/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2-sources.jar!/org/apache/commons/collections/map/AbstractHashedMap.java" />
+    <entry file="jar://$MAVEN_REPOSITORY$/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2-sources.jar!/org/apache/commons/collections/map/AbstractReferenceMap.java" />
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/spark/spark-core_2.12/2.4.3/spark-core_2.12-2.4.3-sources.jar!/org/apache/spark/broadcast/TorrentBroadcast.scala" />
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/spark/spark-core_2.12/2.4.3/spark-core_2.12-2.4.3-sources.jar!/org/apache/spark/broadcast/Broadcast.scala" />
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/spark/spark-core_2.12/2.4.3/spark-core_2.12-2.4.3-sources.jar!/org/apache/spark/serializer/Serializer.scala" />
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/spark/spark-core_2.12/2.4.3/spark-core_2.12-2.4.3-sources.jar!/org/apache/spark/util/ByteBufferInputStream.scala" />
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/spark/spark-core_2.12/2.4.3/spark-core_2.12-2.4.3-sources.jar!/org/apache/spark/serializer/JavaSerializer.scala" />
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/spark/spark-core_2.12/2.4.3/spark-core_2.12-2.4.3-sources.jar!/org/apache/spark/SparkEnv.scala" />
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/spark/spark-core_2.12/2.4.3/spark-core_2.12-2.4.3-sources.jar!/org/apache/spark/storage/memory/MemoryStore.scala" />
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/spark/spark-core_2.12/2.4.3/spark-core_2.12-2.4.3-sources.jar!/org/apache/spark/util/Utils.scala" />
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/spark/spark-core_2.12/2.4.3/spark-core_2.12-2.4.3-sources.jar!/org/apache/spark/executor/Executor.scala" />
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/spark/spark-core_2.12/2.4.3/spark-core_2.12-2.4.3-sources.jar!/org/apache/spark/scheduler/ResultTask.scala" />
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/kafka/kafka-clients/2.3.0/kafka-clients-2.3.0-sources.jar!/org/apache/kafka/common/TopicPartition.java" />
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/spark/spark-streaming-kafka-0-10_2.12/2.4.0/spark-streaming-kafka-0-10_2.12-2.4.0-sources.jar!/org/apache/spark/streaming/kafka010/KafkaDataConsumer.scala" />
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/spark/spark-streaming-kafka-0-10_2.12/2.4.0/spark-streaming-kafka-0-10_2.12-2.4.0-sources.jar!/org/apache/spark/streaming/kafka010/KafkaRDD.scala" />
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/spark/spark-core_2.12/2.4.3/spark-core_2.12-2.4.3-sources.jar!/org/apache/spark/TaskContext.scala" />
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/spark/spark-core_2.12/2.4.3/spark-core_2.12-2.4.3-sources.jar!/org/apache/spark/TaskContextImpl.scala" />
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/spark/spark-core_2.12/2.4.3/spark-core_2.12-2.4.3-sources.jar!/org/apache/spark/scheduler/Task.scala" />
     <entry file="file://$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/DBopts/PGCopyInUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="160" column="38" selection-start-line="160" selection-start-column="38" selection-end-line="160" selection-end-column="38" />
+        <state relative-caret-position="77">
+          <caret line="157" column="31" selection-start-line="157" selection-start-column="31" selection-end-line="157" selection-end-column="31" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/YcApp/conf_online/postgresql.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$MAVEN_REPOSITORY$/org/apache/spark/spark-sql_2.12/2.4.3/spark-sql_2.12-2.4.3.pom" />
+    <entry file="file://$PROJECT_DIR$/YcTest/pom.xml" />
+    <entry file="file://$PROJECT_DIR$/YcTest/src/main/java/test.java" />
+    <entry file="file://$PROJECT_DIR$/YcTest/src/main/java/t.scala" />
+    <entry file="file://$PROJECT_DIR$/YcApp/YcApp.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/Spark/EventsCountWithSparkSQL.java" />
     <entry file="file://$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/Spark/EventsMulCountsArr.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="61" column="89" lean-forward="true" selection-start-line="61" selection-start-column="89" selection-end-line="61" selection-end-column="89" />
+        <state relative-caret-position="578">
+          <caret line="56" selection-start-line="56" selection-end-line="56" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#calculatePagePv#0;class#EventsMulCountsArr#0" />
@@ -957,12 +659,196 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/Spark/ConfigurationManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="13" column="13" lean-forward="true" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/Spark/SparkWordCount.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="27" column="1" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/kafka/ConsumerRecordToBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="34" selection-start-column="34" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/YcApp/conf/postgresql.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="87" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/kafka/EventsConsumers.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="34" selection-start-column="34" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/YcApp/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="59" selection-start-line="59" selection-end-line="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/kafka/EventsMulCountsBroadcast.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="60" column="40" selection-start-line="60" selection-start-column="40" selection-end-line="60" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/spark/spark-sql_2.12/2.4.3/spark-sql_2.12-2.4.3.jar!/org/apache/spark/sql/SparkSession.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="80" column="6" selection-start-line="80" selection-start-column="6" selection-end-line="80" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/spark/spark-sql_2.12/2.4.3/spark-sql_2.12-2.4.3.jar!/org/apache/spark/sql/DataFrameReader.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/kafka/KafkaProducers.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="72" column="33" lean-forward="true" selection-start-line="72" selection-start-column="33" selection-end-line="72" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/Spark/EventsMulCountFromKafka.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2377">
+          <caret line="41" column="29" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/Spark/EventsMulCount.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2774">
+          <caret line="306" lean-forward="true" selection-start-line="306" selection-end-line="306" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/Spark/EventsUserFlowWithSpark.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-303">
+          <caret line="85" column="61" selection-start-line="85" selection-start-column="45" selection-end-line="85" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/Spark/EventsMulCounts.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4">
+          <caret line="285" column="39" lean-forward="true" selection-start-line="285" selection-start-column="39" selection-end-line="285" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#calculatePagePv#0;class#EventsMulCounts#0" />
+            <element signature="method#calculateTxt#0;class#EventsMulCounts#0" />
+            <marker date="1563358381530" expanded="true" signature="6648:8314" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/Spark/SparkPostgresqlJdbc.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="308" lean-forward="true" selection-start-line="27" selection-start-column="41" selection-end-line="27" selection-end-column="308" />
+        </state>
+      </provider>
+    </entry>
   </component>
   <component name="masterDetails">
     <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>scala-sdk-2.13.0</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>YcApp</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
       <state key="ProjectJDKs.UI">
         <settings>
           <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
           <splitter-proportions>
             <option name="proportions">
               <list>

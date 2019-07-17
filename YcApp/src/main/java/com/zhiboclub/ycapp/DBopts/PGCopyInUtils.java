@@ -156,6 +156,7 @@ public class PGCopyInUtils {
 
     //查询方法
     public ResultSet query(String sql) throws SQLException {
+        System.out.println(sql);
         if(connection != null){
             pstmt = connection.prepareStatement(sql);
             rs = pstmt.executeQuery();

@@ -6,12 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="YcApp" />
         <module name="YcWeb" />
+        <module name="YcApp" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="YcApp" target="1.8" />
+      <module name="YcTest" target="1.8" />
       <module name="YcWeb" target="1.8" />
     </bytecodeTargetLevel>
   </component>
