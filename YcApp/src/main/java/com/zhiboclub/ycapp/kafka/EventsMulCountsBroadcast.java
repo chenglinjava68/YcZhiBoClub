@@ -9,6 +9,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.zhiboclub.ycapp.Bean.EventsMesgInfo;
 import com.zhiboclub.ycapp.DBopts.PGCopyInUtils;
+import com.zhiboclub.ycapp.Utils.ArrayListUtil;
 import com.zhiboclub.ycapp.Utils.TimeManager;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.common.serialization.StringDeserializer;
@@ -16,7 +17,6 @@ import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.Optional;
 import org.apache.spark.api.java.function.*;
-import org.apache.spark.broadcast.Broadcast;
 import org.apache.spark.streaming.Durations;
 import org.apache.spark.streaming.Time;
 import org.apache.spark.streaming.api.java.*;
@@ -51,14 +51,16 @@ public class EventsMulCountsBroadcast {
     private static List<String> DepartureAccess = new ArrayList<>();
 
     static JavaStreamingContext jssc;
+
     static {
         MonLiveId.add("230703875007");
         MonLiveId.add("230734135125");
         MonLiveId.add("230577279604");
     }
+
     public static void main(String[] args) throws Exception {
 
-        SparkConf conf = new SparkConf().setAppName("YcKafka2SparkUserFlow").setMaster("local[4]");
+        SparkConf conf = new SparkConf().setAppName("YcKafka2SparkUserFlow").setMaster("local[10]");
 
         jssc = new JavaStreamingContext(conf, Durations.seconds(5));
         jssc.checkpoint("/streaming_checkpoint");
@@ -68,7 +70,6 @@ public class EventsMulCountsBroadcast {
         jssc.sparkContext().broadcast(DepartureUser);
         jssc.sparkContext().broadcast(HistoryAccess);
         jssc.sparkContext().broadcast(DepartureAccess);
-
 
 
         Map<String, Object> kafkaParams = new HashMap<>();
@@ -339,7 +340,6 @@ public class EventsMulCountsBroadcast {
                 new Tuple2<>(word.split(":@:")[1].split("@")[0], word.split(":@:")[1].split("@")[1])
         ).groupByKey();
 
-        total.print(100);
 
         total.foreachRDD((VoidFunction2<JavaPairRDD<String, Iterable<String>>, Time>) (rdd, time) ->
         {
@@ -350,90 +350,77 @@ public class EventsMulCountsBroadcast {
                     String str = (String) iter.next();
                     uIdonly.add(str);
                 }
-                for(String i:uIdonly)
-                if (AccessedUser.contains(i)) {
-                    if (MonLiveId.contains(tuple2._1)) {
-                        System.out.println("即在监控中，也在访问中");
-                        AccessingUser.add(tuple2._1 + "@" + i);
-                        AccessingUser.add(i);
-                        System.out.println("查询数据库用户ID为" + i + "；并将查询的结果放到HistoryAccess中去");
-                        ResultSet rs = PGCopyInUtils.getinstance().query("select distinct \"liveId\" from events where \"userId\" = "+i+" ORDER BY \"startTime\" desc limit 10;");
-                        if (rs != null){
-                            while (rs.next()) {
-                                System.out.println("我的直播ID:" + tuple2._1 + "之前去过直播ID:" + rs.getString("liveId"));
-                                HistoryAccess.add(tuple2._1+"@"+i+"@"+rs.getString("liveId"));
+                for (String i : uIdonly)
+                    if (AccessedUser.contains(i)) {
+                        if (MonLiveId.contains(tuple2._1)) {
+                            System.out.println("即在监控中，也在访问中");
+                            AccessingUser.add(tuple2._1 + "@" + i);
+                            AccessingUser.add(i);
+                            System.out.println("查询数据库用户ID为" + i + "；并将查询的结果放到HistoryAccess中去");
+                            ResultSet rs = PGCopyInUtils.getinstance().query("select distinct \"liveId\" from events where \"userId\" = " + i + " ORDER BY \"startTime\" desc limit 10;");
+                            if (rs != null) {
+                                while (rs.next()) {
+                                    System.out.println("我的直播ID:" + tuple2._1 + "之前去过直播ID:" + rs.getString("liveId"));
+                                    HistoryAccess.add(tuple2._1 + "@" + i + "@" + rs.getString("liveId"));
+                                }
+                                AccessedUser.addAll(AccessingUser);
+                                for (String id : AccessedUser) {
+                                    if (id.split("@").length == 2)
+                                        if (id.split("@")[1].equals(i) && !id.split("@")[0].equals(tuple2._1)) {
+                                            AccessedUser.remove(id);
+                                            AccessingUser.remove(id);
+                                            DepartureAccess.add(id + "@" + tuple2._1);
+                                            DepartureAccess.add(id);
+                                            System.out.println("这个粉丝访问该直播间已经离开去了其他监控的直播间" + id + "@" + tuple2._1);
+                                            break;
+                                        }
+                                }
                             }
-                            AccessedUser.addAll(AccessingUser);
+                        } else {
+                            //在访问列表c中，不在监控a中，说明这是一个离开的event
+                            System.out.println("不在监控中，在访问中");
                             for (String id : AccessedUser) {
-                                if(id.split("@").length == 1){
-                                    continue;
-                                }
-                                if (id.split("@")[1].equals(i) && !id.split("@")[0].equals(tuple2._1)) {
-                                    AccessedUser.remove(id);
-                                    AccessingUser.remove(id);
-                                    DepartureAccess.add(id + "@" + tuple2._1);
-                                    DepartureAccess.add(id);
-                                    System.out.println("这个粉丝访问该直播间已经离开去了其他监控的直播间" + id + "@" + tuple2._1);
-                                    break;
-                                }
+                                if (id.split("@").length == 2)
+                                    if (id.split("@")[1].equals(i)) {
+                                        AccessedUser.remove(id);
+                                        AccessedUser.remove(i);
+                                        AccessingUser.remove(id);
+                                        AccessingUser.remove(i);
+                                        DepartureAccess.add(id + "@" + tuple2._1);
+                                        DepartureAccess.add(id);
+                                        System.out.println("这个粉丝访问该直播间已经离开去了" + id + "@" + tuple2._1);
+                                        break;
+                                    }
                             }
                         }
                     } else {
-                        //在访问列表c中，不在监控a中，说明这是一个离开的event
-                        System.out.println("不在监控中，在访问中");
-                        for (String id : AccessedUser) {
-                            if (id.split("@")[1].equals(i)) {
-                                AccessedUser.remove(id);
-                                AccessedUser.remove(i);
-                                AccessingUser.remove(id);
-                                AccessingUser.remove(i);
-                                DepartureAccess.add(id + "@" + tuple2._1);
-                                DepartureAccess.add(id);
-                                System.out.println("这个粉丝访问该直播间已经离开去了" + id + "@" + tuple2._1);
-                                break;
+                        if (MonLiveId.contains(tuple2._1)) {
+                            System.out.println("处于监控的LiveID，属于第一次访问这场直播");
+                            AccessingUser.add(tuple2._1 + "@" + i);
+                            AccessingUser.add(i);
+                            System.out.println("查询数据库用户ID为" + i + "；并将查询的结果放到HistoryAccess中去");
+                            ResultSet rs = PGCopyInUtils.getinstance().query("select distinct \"liveId\" from events where \"userId\" = " + i + " ORDER BY \"startTime\" desc limit 10;");
+                            if (rs != null) {
+                                while (rs.next()) {
+                                    System.out.println("我的直播ID:" + tuple2._1 + "之前去过直播ID:" + rs.getString("liveId"));
+                                    HistoryAccess.add(tuple2._1 + "@" + i + "@" + rs.getString("liveId"));
+                                }
+                                AccessedUser.addAll(AccessingUser);
                             }
                         }
                     }
-                } else {
-                    if (MonLiveId.contains(tuple2._1)) {
-                        System.out.println("处于监控的LiveID，属于第一次访问这场直播");
-                        AccessingUser.add(tuple2._1 + "@" + i);
-                        AccessingUser.add(i);
-                        System.out.println("查询数据库用户ID为" + i+ "；并将查询的结果放到HistoryAccess中去");
-                        ResultSet rs = PGCopyInUtils.getinstance().query("select distinct \"liveId\" from events where \"userId\" = "+i+" ORDER BY \"startTime\" desc limit 10;");
-                        if(rs != null){
-                            while (rs.next()) {
-                                System.out.println("我的直播ID:" + tuple2._1 + "之前去过直播ID:" + rs.getString("liveId"));
-                                HistoryAccess.add(tuple2._1+"@"+i+"@"+rs.getString("liveId"));
-                            }
-                            AccessedUser.addAll(AccessingUser);
-                        }
-                    }
-                }
             });
 
-            jssc.sparkContext().broadcast(AccessingUser);
-            jssc.sparkContext().broadcast(AccessedUser);
-            jssc.sparkContext().broadcast(HistoryAccess);
-            jssc.sparkContext().broadcast(DepartureAccess);
-            for(String i:AccessingUser){
-                System.out.println("正在访问+++++++"+i);
+            for (String i : AccessingUser) {
+                System.out.println("正在访问+++++++" + i);
             }
-            for(String i:AccessedUser){
-                System.out.println("访问过了+++++++"+i);
+            for (String i : AccessedUser) {
+                System.out.println("访问过了+++++++" + i);
             }
-            for(String i:HistoryAccess){
-                System.out.println("历史访问+++++++"+i);
-            }
-            for(String i:DepartureAccess){
-                System.out.println("离开到哪+++++++"+i);
-            }
-
-
-
-
-
+            System.out.println("历史统计" + new ArrayListUtil().List2MapWithDepartureAccess(HistoryAccess, "@", 3));
+            System.out.println("离开统计" + new ArrayListUtil().List2MapWithDepartureAccess(DepartureAccess, "@", 3));
         });
 
     }
+
 }
