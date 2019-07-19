@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f1918366-e1b6-41c1-8d39-eee83bb8e8ee" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/Spark/EventsCountUserAccessPath.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/Utils/ArrayListUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/test/test_sparkadd.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/Spark/EventsCountUserAccessPath2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/kafka/EventsMulCountsBroadcast.java" beforeDir="false" afterPath="$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/kafka/EventsMulCountsBroadcast.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/Spark/EventsCountUserAccessPath.java" beforeDir="false" afterPath="$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/Spark/EventsCountUserAccessPath.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/kafka/KafkaProducers.java" beforeDir="false" afterPath="$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/kafka/KafkaProducers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/test/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/test/test.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/YcWeb/target/" />
     <ignored path="$PROJECT_DIR$/YcApp/target/" />
@@ -28,14 +25,29 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/kafka/EventsMulCountsBroadcast.java">
+        <entry file="file://$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/Spark/EventsMulCounts.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-10">
-              <caret line="368" column="50" selection-start-line="368" selection-start-column="50" selection-end-line="368" selection-end-column="50" />
+            <state relative-caret-position="487">
+              <caret line="293" column="84" lean-forward="true" selection-start-line="291" selection-start-column="13" selection-end-line="293" selection-end-column="84" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#calculatePagePv#0;class#EventsMulCountsBroadcast#0" />
-                <element signature="method#calculateTxt#0;class#EventsMulCountsBroadcast#0" />
+                <element signature="method#calculatePagePv#0;class#EventsMulCounts#0" />
+                <element signature="method#calculateTxt#0;class#EventsMulCounts#0" />
+                <marker date="1563358381530" expanded="true" signature="6648:8314" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/Spark/EventsMulCountsArr.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="276">
+              <caret line="331" column="74" lean-forward="true" selection-start-line="330" selection-start-column="13" selection-end-line="331" selection-end-column="74" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#calculatePagePv#0;class#EventsMulCountsArr#0" />
+                <element signature="method#calculateTxt#0;class#EventsMulCountsArr#0" />
               </folding>
             </state>
           </provider>
@@ -44,75 +56,34 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/Spark/EventsCountUserAccessPath.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="104">
-              <caret line="102" column="46" lean-forward="true" selection-start-line="102" selection-start-column="46" selection-end-line="102" selection-end-column="46" />
+            <state relative-caret-position="-561">
+              <caret line="65" column="49" lean-forward="true" selection-start-line="65" selection-start-column="49" selection-end-line="65" selection-end-column="49" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#5045#5074#0" />
+                <element signature="e#3865#3866#0" expanded="true" />
+                <element signature="e#3910#3911#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/apache/spark/spark-core_2.12/2.4.3/spark-core_2.12-2.4.3-sources.jar!/org/apache/spark/api/java/JavaPairRDD.scala">
+        <entry file="file://$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/Spark/KafkaStreamingWordCount.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1036" column="4" selection-start-line="1036" selection-start-column="4" selection-end-line="1036" selection-end-column="4" />
+            <state relative-caret-position="271">
+              <caret line="91" column="12" selection-start-line="91" selection-start-column="12" selection-end-line="91" selection-end-column="138" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/apache/spark/spark-core_2.12/2.4.3/spark-core_2.12-2.4.3-sources.jar!/org/apache/spark/util/collection/ExternalAppendOnlyMap.scala">
+        <entry file="file://$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/test/test.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="157" column="10" selection-start-line="157" selection-start-column="10" selection-end-line="157" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/apache/spark/spark-core_2.12/2.4.3/spark-core_2.12-2.4.3-sources.jar!/org/apache/spark/scheduler/Task.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="118">
-              <caret line="155" column="10" selection-start-line="155" selection-start-column="10" selection-end-line="155" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/apache/spark/spark-core_2.12/2.4.3/spark-core_2.12-2.4.3-sources.jar!/org/apache/spark/util/Utils.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
-              <caret line="1367" column="6" selection-start-line="1367" selection-start-column="6" selection-end-line="1367" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/apache/spark/spark-core_2.12/2.4.3/spark-core_2.12-2.4.3-sources.jar!/org/apache/spark/executor/Executor.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="118">
-              <caret line="615" column="8" selection-start-line="615" selection-start-column="8" selection-end-line="615" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/apache/spark/spark-core_2.12/2.4.3/spark-core_2.12-2.4.3-sources.jar!/org/apache/spark/util/collection/AppendOnlyMap.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="151" column="8" selection-start-line="151" selection-start-column="8" selection-end-line="151" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/apache/spark/spark-core_2.12/2.4.3/spark-core_2.12-2.4.3-sources.jar!/org/apache/spark/util/collection/SizeTrackingAppendOnlyMap.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="33" column="4" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="4" />
+            <state relative-caret-position="323">
+              <caret line="19" column="3" lean-forward="true" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="31" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -120,8 +91,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/kafka/KafkaProducers.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3">
-              <caret line="101" column="28" selection-start-line="101" selection-start-column="28" selection-end-line="101" selection-end-column="28" />
+            <state relative-caret-position="252">
+              <caret line="90" column="33" lean-forward="true" selection-start-line="90" selection-start-column="33" selection-end-line="90" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/Spark/EventsMulCount.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="527">
+              <caret line="306" selection-start-line="306" selection-end-line="306" />
             </state>
           </provider>
         </entry>
@@ -151,6 +131,10 @@
       <find>1563452414946##230577279604</find>
       <find>1563452509668##230577279604</find>
       <find>1563452924046</find>
+      <find>230665479982</find>
+      <find>:@:</find>
+      <find>Total</find>
+      <find>print</find>
     </findStrings>
     <replaceStrings>
       <replace>LOG.info</replace>
@@ -162,7 +146,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/YcApp/conf_online/postgresql.properties" />
         <option value="$PROJECT_DIR$/YcApp/conf/events_consumer.properties" />
         <option value="$PROJECT_DIR$/YcApp/conf_online/fans_consumer.properties" />
         <option value="$PROJECT_DIR$/YcApp/conf/fans_consumer.properties" />
@@ -209,9 +192,10 @@
         <option value="$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/test/test_sparkadd.java" />
         <option value="$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/Utils/ArrayListUtil.java" />
         <option value="$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/kafka/EventsMulCountsBroadcast.java" />
-        <option value="$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/kafka/KafkaProducers.java" />
         <option value="$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/Spark/KafkaStreamingWordCount.java" />
         <option value="$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/test/test.java" />
+        <option value="$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/Spark/EventsCountUserAccessPath2.java" />
+        <option value="$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/kafka/KafkaProducers.java" />
         <option value="$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/Spark/EventsCountUserAccessPath.java" />
       </list>
     </option>
@@ -252,6 +236,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="CatdeaLogs" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -259,94 +245,11 @@
               <item name="YcZhiBoClub" type="b2602c69:ProjectViewProjectNode" />
               <item name="YcZhiBoClub" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="YcZhiBoClub" type="b2602c69:ProjectViewProjectNode" />
-              <item name="YcZhiBoClub" type="462c0819:PsiDirectoryNode" />
-              <item name="YcApp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="YcZhiBoClub" type="b2602c69:ProjectViewProjectNode" />
-              <item name="YcZhiBoClub" type="462c0819:PsiDirectoryNode" />
-              <item name="YcApp" type="462c0819:PsiDirectoryNode" />
-              <item name="conf" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="YcZhiBoClub" type="b2602c69:ProjectViewProjectNode" />
-              <item name="YcZhiBoClub" type="462c0819:PsiDirectoryNode" />
-              <item name="YcApp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="YcZhiBoClub" type="b2602c69:ProjectViewProjectNode" />
-              <item name="YcZhiBoClub" type="462c0819:PsiDirectoryNode" />
-              <item name="YcApp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="YcZhiBoClub" type="b2602c69:ProjectViewProjectNode" />
-              <item name="YcZhiBoClub" type="462c0819:PsiDirectoryNode" />
-              <item name="YcApp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="YcZhiBoClub" type="b2602c69:ProjectViewProjectNode" />
-              <item name="YcZhiBoClub" type="462c0819:PsiDirectoryNode" />
-              <item name="YcApp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ycapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="YcZhiBoClub" type="b2602c69:ProjectViewProjectNode" />
-              <item name="YcZhiBoClub" type="462c0819:PsiDirectoryNode" />
-              <item name="YcApp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ycapp" type="462c0819:PsiDirectoryNode" />
-              <item name="kafka" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="YcZhiBoClub" type="b2602c69:ProjectViewProjectNode" />
-              <item name="YcZhiBoClub" type="462c0819:PsiDirectoryNode" />
-              <item name="YcApp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ycapp" type="462c0819:PsiDirectoryNode" />
-              <item name="Spark" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="YcZhiBoClub" type="b2602c69:ProjectViewProjectNode" />
-              <item name="YcZhiBoClub" type="462c0819:PsiDirectoryNode" />
-              <item name="YcApp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ycapp" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="YcZhiBoClub" type="b2602c69:ProjectViewProjectNode" />
-              <item name="YcZhiBoClub" type="462c0819:PsiDirectoryNode" />
-              <item name="YcApp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ycapp" type="462c0819:PsiDirectoryNode" />
-              <item name="Utils" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="CatdeaLogs" />
       <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -369,15 +272,18 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/YcApp/conf" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.zhiboclub.ycapp.Spark" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/YcApp/conf_online" />
       <recent name="$PROJECT_DIR$/YcApp/src/main" />
       <recent name="$PROJECT_DIR$/YcApp" />
       <recent name="$PROJECT_DIR$/YcApp/conf" />
       <recent name="$PROJECT_DIR$/YcApp/src/main/resources" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/YcApp/conf" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -395,6 +301,19 @@
   <component name="RunManager" selected="Application.EventsCountUserAccessPath">
     <configuration name="EventsCountUserAccessPath" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.zhiboclub.ycapp.Spark.EventsCountUserAccessPath" />
+      <module name="YcApp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zhiboclub.ycapp.Spark.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EventsCountUserAccessPath2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.zhiboclub.ycapp.Spark.EventsCountUserAccessPath2" />
       <module name="YcApp" />
       <extension name="coverage">
         <pattern>
@@ -445,19 +364,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="test_sparkadd" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.zhiboclub.ycapp.test.test_sparkadd" />
-      <module name="YcApp" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.zhiboclub.ycapp.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="YcApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="YcWeb" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.zhiboclub.ycweb.YcApplication" />
@@ -467,19 +373,19 @@
     </configuration>
     <list>
       <item itemvalue="Application.KafkaProducers" />
-      <item itemvalue="Spring Boot.YcApplication" />
       <item itemvalue="Application.EventsMulCountsBroadcast" />
-      <item itemvalue="Application.test_sparkadd" />
       <item itemvalue="Application.EventsCountUserAccessPath" />
       <item itemvalue="Application.test" />
+      <item itemvalue="Application.EventsCountUserAccessPath2" />
+      <item itemvalue="Spring Boot.YcApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.KafkaProducers" />
         <item itemvalue="Application.EventsCountUserAccessPath" />
         <item itemvalue="Application.test" />
-        <item itemvalue="Application.KafkaProducers" />
+        <item itemvalue="Application.EventsCountUserAccessPath2" />
         <item itemvalue="Application.EventsMulCountsBroadcast" />
-        <item itemvalue="Application.test_sparkadd" />
       </list>
     </recent_temporary>
   </component>
@@ -504,7 +410,8 @@
       <workItem from="1563348111416" duration="1514000" />
       <workItem from="1563349771962" duration="9307000" />
       <workItem from="1563359598733" duration="112000" />
-      <workItem from="1563379883192" duration="33356000" />
+      <workItem from="1563379883192" duration="35309000" />
+      <workItem from="1563499476828" duration="10326000" />
     </task>
     <task id="LOCAL-00001" summary="初始化app和web两个项目&#10;web中添加events表的查询接口">
       <created>1562809797585</created>
@@ -562,7 +469,14 @@
       <option name="project" value="LOCAL" />
       <updated>1563359673266</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="完善events路径统计">
+      <created>1563455139240</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1563455139241</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -571,7 +485,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="228635000" />
+    <option name="totallyTimeSpent" value="240914000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -584,10 +498,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="947" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Web" order="0" sideWeight="0.50088185" side_tool="true" weight="0.2008547" />
-      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.4970297" visible="true" weight="0.25152627" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.4970297" visible="true" weight="0.25457877" />
       <window_info id="Structure" order="2" sideWeight="0.5029703" side_tool="true" weight="0.25152627" />
       <window_info id="Designer" order="3" />
       <window_info id="Learn" order="4" />
@@ -601,7 +514,7 @@
       <window_info anchor="bottom" id="Duplicates" order="3" weight="0.32978722" />
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Find" order="5" weight="0.32932693" />
-      <window_info active="true" anchor="bottom" id="Run" order="6" visible="true" weight="0.5276442" />
+      <window_info anchor="bottom" id="Run" order="6" visible="true" weight="0.2079327" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.515625" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
@@ -622,6 +535,43 @@
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info anchor="right" id="Theme Preview" order="9" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Web" order="0" sideWeight="0.50088185" side_tool="true" weight="0.2008547" />
+      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.4970297" weight="0.25457877" />
+      <window_info id="Structure" order="2" sideWeight="0.5029703" side_tool="true" weight="0.25152627" />
+      <window_info id="Designer" order="3" />
+      <window_info id="Learn" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Favorites" order="6" sideWeight="0.50088185" side_tool="true" weight="0.2008547" />
+      <window_info id="Capture Tool" order="7" />
+      <window_info id="Image Layers" order="8" />
+      <window_info anchor="bottom" id="Spring" order="0" weight="0.32932693" />
+      <window_info anchor="bottom" id="Messages" order="1" weight="0.328125" />
+      <window_info anchor="bottom" id="Java Enterprise" order="2" weight="0.32932693" />
+      <window_info anchor="bottom" id="Duplicates" order="3" weight="0.32978722" />
+      <window_info anchor="bottom" id="Message" order="4" />
+      <window_info anchor="bottom" id="Find" order="5" weight="0.32932693" />
+      <window_info anchor="bottom" id="Run" order="6" visible="true" weight="0.38701922" />
+      <window_info anchor="bottom" id="Debug" order="7" weight="0.515625" />
+      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="10" weight="0.32932693" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32932693" />
+      <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
+      <window_info anchor="bottom" id="Database Changes" order="13" />
+      <window_info anchor="bottom" id="Version Control" order="14" weight="0.32932693" />
+      <window_info anchor="bottom" id="Docker" order="15" show_stripe_button="false" />
+      <window_info anchor="right" id="Bean Validation" order="0" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="2" weight="0.24969475" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="4" weight="0.16971917" />
+      <window_info anchor="right" id="Palette" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Database" order="7" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info anchor="right" id="Theme Preview" order="9" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -635,7 +585,8 @@
     <MESSAGE value="完善events表sparkstreaming的统计&#10;1、统计pv&#10;2、统计uv&#10;3、统计评论数&#10;4、统计评论人数&#10;5、统计粉丝流向" />
     <MESSAGE value="完善events表粉丝流向统计" />
     <MESSAGE value="添加使用队列处理粉丝访问路径统计&#10;测试SparkSql性能" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加使用队列处理粉丝访问路径统计&#10;测试SparkSql性能" />
+    <MESSAGE value="完善events路径统计" />
+    <option name="LAST_COMMIT_MESSAGE" value="完善events路径统计" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -660,7 +611,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2-sources.jar!/org/apache/commons/collections/map/AbstractHashedMap.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2-sources.jar!/org/apache/commons/collections/map/AbstractReferenceMap.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/org/apache/spark/spark-core_2.12/2.4.3/spark-core_2.12-2.4.3-sources.jar!/org/apache/spark/broadcast/TorrentBroadcast.scala" />
     <entry file="jar://$MAVEN_REPOSITORY$/org/apache/spark/spark-core_2.12/2.4.3/spark-core_2.12-2.4.3-sources.jar!/org/apache/spark/broadcast/Broadcast.scala" />
@@ -760,29 +710,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/Spark/EventsMulCount.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4811">
-          <caret line="306" selection-start-line="306" selection-end-line="306" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/Spark/SparkPostgresqlJdbc.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" column="48" selection-start-line="16" selection-start-column="48" selection-end-line="16" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/Spark/EventsMulCountsArr.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2015">
-          <caret line="337" column="28" selection-start-line="337" selection-start-column="28" selection-end-line="337" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#calculatePagePv#0;class#EventsMulCountsArr#0" />
-            <element signature="method#calculateTxt#0;class#EventsMulCountsArr#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -804,16 +735,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/test/test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="17" column="32" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/Utils/ArrayListUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="222">
@@ -821,33 +742,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/Spark/EventsMulCounts.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="333" column="11" lean-forward="true" selection-start-line="333" selection-start-column="11" selection-end-line="334" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#calculatePagePv#0;class#EventsMulCounts#0" />
-            <element signature="method#calculateTxt#0;class#EventsMulCounts#0" />
-            <marker date="1563358381530" expanded="true" signature="6648:8314" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/Spark/KafkaStreamingWordCount.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="107" column="27" lean-forward="true" selection-start-line="96" selection-start-column="12" selection-end-line="107" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/kafka/KafkaProducers.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3">
-          <caret line="101" column="28" selection-start-line="101" selection-start-column="28" selection-end-line="101" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -912,13 +806,77 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/Spark/EventsCountUserAccessPath.java">
+    <entry file="file://$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/Spark/EventsCountUserAccessPath2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="102" column="46" lean-forward="true" selection-start-line="102" selection-start-column="46" selection-end-line="102" selection-end-column="46" />
+        <state relative-caret-position="986">
+          <caret line="79" column="21" lean-forward="true" selection-start-line="79" selection-start-column="21" selection-end-line="79" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/test/test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="3" lean-forward="true" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5045#5074#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/kafka/KafkaProducers.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="90" column="33" lean-forward="true" selection-start-line="90" selection-start-column="33" selection-end-line="90" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/Spark/KafkaStreamingWordCount.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="91" column="12" selection-start-line="91" selection-start-column="12" selection-end-line="91" selection-end-column="138" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/Spark/EventsMulCount.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="306" selection-start-line="306" selection-end-line="306" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/Spark/EventsMulCounts.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="487">
+          <caret line="293" column="84" lean-forward="true" selection-start-line="291" selection-start-column="13" selection-end-line="293" selection-end-column="84" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#calculatePagePv#0;class#EventsMulCounts#0" />
+            <element signature="method#calculateTxt#0;class#EventsMulCounts#0" />
+            <marker date="1563358381530" expanded="true" signature="6648:8314" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/Spark/EventsMulCountsArr.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="331" column="74" lean-forward="true" selection-start-line="330" selection-start-column="13" selection-end-line="331" selection-end-column="74" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#calculatePagePv#0;class#EventsMulCountsArr#0" />
+            <element signature="method#calculateTxt#0;class#EventsMulCountsArr#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/YcApp/src/main/java/com/zhiboclub/ycapp/Spark/EventsCountUserAccessPath.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-561">
+          <caret line="65" column="49" lean-forward="true" selection-start-line="65" selection-start-column="49" selection-end-line="65" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3865#3866#0" expanded="true" />
+            <element signature="e#3910#3911#0" expanded="true" />
           </folding>
         </state>
       </provider>

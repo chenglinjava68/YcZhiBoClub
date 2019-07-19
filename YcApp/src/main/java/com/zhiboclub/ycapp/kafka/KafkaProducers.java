@@ -94,10 +94,10 @@ public class KafkaProducers extends Thread {
         lids.add("230669683405");
         String lid = "";
         String li = "";
-        for (int i = 1; i <= 100000; i++) {
+        for (int i = 1; i <= 10000; i++) {
             lid = lids.get(random.nextInt(lids.size()));
             li = l.get(random.nextInt(l.size()));
-            ProducerRecord<String, String> msg = new ProducerRecord<String, String>(topic, "{\"liveId\":\"" + lid + "\",\"anchorId\":\"3599178445\",\"topic\":\"e3d45e51-41dc-4f1e-af47-a22b54a3fe37\",\"title\":\"二手LV古驰香奈儿\",\"type\":\"txt\",\"typeCode\":10005,\"user\":{\"userId\":\"" + li + "\",\"userName\":\"mts_hua\"},\"body\":{\"txt\":{\"totalCount\":" + i + ",\"onlineCount\":" + i + ",\"addUsers\":{\"369828135\":\"mts_hua\",\"866264412\":\"tb1833817_2012\"},\"pageViewCount\":\"" + i + "\"}},\"startTime\":1562894979000}");
+            ProducerRecord<String, String> msg = new ProducerRecord<String, String>(topic, "{\"liveId\":\"" + lid + "\",\"anchorId\":\"3599178445\",\"topic\":\"e3d45e51-41dc-4f1e-af47-a22b54a3fe37\",\"title\":\"二手LV古驰香奈儿\",\"type\":\"txt\",\"typeCode\":10005,\"user\":{\"userId\":\"" + li + "\",\"userName\":\"mts_hua\"},\"body\":{\"txt\":{\"totalCount\":" + i + ",\"onlineCount\":" + i + ",\"addUsers\":{\"369828135\":\"mts_hua\",\"866264412\":\"tb1833817_2012\"},\"pageViewCount\":\"" + i + "\"}},\"startTime\":1562894910000}");
             KafkaProducers.getInstance().send(msg);
             System.out.println("发送消息成功：" + msg.value());
             try {
