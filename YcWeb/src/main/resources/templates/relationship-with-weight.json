@@ -1,0 +1,55 @@
+{
+  "nodes":[
+    {
+      "id":0,
+      "name":"直播LiveId 0",
+      "value":21
+    },
+    {
+      "id":1,
+      "name":"直播LiveId 1",
+      "value":34
+    },
+    {
+      "id":2,
+      "name":"直播LiveId 2",
+      "value":8
+    },
+    {
+      "id":3,
+      "name":"直播LiveId 3",
+      "value":40
+    },
+    {
+      "id":4,
+      "name":"直播LiveId 4",
+      "value":18
+    }
+  ],
+  "links":[
+    {
+      "source":1,
+      "target":2,
+      "sourceWeight":1,
+      "targetWeight":1
+    },
+    {
+      "source":2,
+      "target":1,
+      "sourceWeight":1,
+      "targetWeight":1
+    },
+    {
+      "source":2,
+      "target":3,
+      "sourceWeight":1,
+      "targetWeight":1
+    },
+    {
+      "source":3,
+      "target":4,
+      "sourceWeight":12,
+      "targetWeight":2
+    }
+  ]
+}

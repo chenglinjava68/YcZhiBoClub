@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,height=device-height">
+    <title>和弦图</title>
+    <style>::-webkit-scrollbar{display:none;}html,body{overflow:hidden;height:100%;margin:0;}</style>
+</head>
+<body>
+<div id="mountNode"></div>
+<script>/*Fixing iframe window.innerHeight 0 issue in Safari*/document.body.clientHeight;</script>
+<script src="https://gw.alipayobjects.com/os/antv/pkg/_antv.g2-3.5.1/dist/g2.min.js"></script>
+<script src="https://gw.alipayobjects.com/os/antv/pkg/_antv.data-set-0.10.1/dist/data-set.min.js"></script>
+<script src="https://gw.alipayobjects.com/os/antv/assets/lib/jquery-3.2.1.min.js"></script>
+<script>
+    $.getJSON('relationship-with-weight.json', function(data) {
+        // arc diagram layout
+        var ds = new DataSet();
+        var dv = ds.createView().source(data, {
+            type: 'graph',
+            edges: function edges(d) {
+                return d.links;
+            }
+        });
+        dv.transform({
+            type: 'diagram.arc',
+            sourceWeight: function sourceWeight(e) {
+                return e.sourceWeight;
+            },
+            targetWeight: function targetWeight(e) {
+                return e.targetWeight;
+            },
+            weight: true,
+            marginRatio: 0.3
+        });
+
+        var chart = new G2.Chart({
+            container: 'mountNode',
+            forceFit: true,
+            height: window.innerHeight
+        });
+        chart.legend(false);
+        chart.tooltip({
+            showTitle: false
+        });
+
+        chart.scale({
+            x: {
+                sync: true
+            },
+            y: {
+                sync: true
+            }
+        });
+
+        var edgeView = chart.view();
+        edgeView.source(dv.edges);
+        edgeView.coord('polar').reflect('y');
+        edgeView.axis(false);
+        edgeView.edge().position('x*y').shape('arc').color('source').opacity(0.5).tooltip('source*target*value');
+
+        var nodeView = chart.view();
+        nodeView.source(dv.nodes);
+        nodeView.coord('polar').reflect('y');
+        nodeView.axis(false);
+        nodeView.polygon().position('x*y').color('id').label('name', {
+            labelEmit: true,
+            textStyle: {
+                fill: '#8c8c8c'
+            }
+        });
+
+        chart.render();
+    });
+</script>
+</body>
+</html>

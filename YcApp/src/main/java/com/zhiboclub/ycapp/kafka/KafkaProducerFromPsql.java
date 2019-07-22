@@ -90,7 +90,7 @@ public class KafkaProducerFromPsql extends Thread {
                 KafkaProducers.getInstance().send(msg);
                 System.out.println("发送消息成功：" + msg.value());
                 try {
-                    sleep(100);
+                    sleep(1000);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
