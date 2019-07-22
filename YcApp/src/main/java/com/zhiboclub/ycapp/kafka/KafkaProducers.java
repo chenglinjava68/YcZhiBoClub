@@ -18,14 +18,14 @@ public class KafkaProducers extends Thread {
 
     private static Properties props = new Properties();
 
-    private static String topic = ConfigurationManager.getInstance().GetValues("producer.topic", "testp3");
+    private static String topic = "test3";
 
     private static Producer<String, String> producer = null;
 
     public static Producer<String, String> getInstance() {
         if (producer == null) {
             init();
-            producer = new KafkaProducer<String, String>(props);
+            producer = new KafkaProducer<>(props);
         }
         return producer;
     }

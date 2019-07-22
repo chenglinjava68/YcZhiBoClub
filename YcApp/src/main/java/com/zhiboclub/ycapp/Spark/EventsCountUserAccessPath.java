@@ -40,7 +40,7 @@ public class EventsCountUserAccessPath {
         kafkaParams.put("enable.auto.commit", false);
 
         // 构建topic set
-        String kafkaTopics = "testp3";
+        String kafkaTopics = "events-p3";
         String[] kafkaTopicsSplited = kafkaTopics.split(",");
 
         Collection<String> topics = new HashSet<>();
@@ -63,8 +63,6 @@ public class EventsCountUserAccessPath {
                 EventsMesgInfo mesginfo = JSON.parseObject(record.value(), EventsMesgInfo.class);
 
                 Timestamp timestamp = mesginfo.getStartTime();
-                String body = mesginfo.getBody();
-                JSONObject jb = JSON.parseObject(body);
                 String lid = mesginfo.getLiveId();
                 String uid = mesginfo.getUser().getUserId();
 
@@ -78,6 +76,8 @@ public class EventsCountUserAccessPath {
         JavaPairDStream<String, String> user = userVisit.reduceByKeyAndWindow((Function2<String, String, String>) (x, y) ->
             (x+"#"+y)
         ,Durations.seconds(600), Durations.seconds(5));
+
+//        user.print(100);
 
         JavaDStream<String> line=user.map(new Function<Tuple2<String,String>,String>() {
             private static final long serialVersionUID = 1L;
@@ -103,13 +103,18 @@ public class EventsCountUserAccessPath {
                     if(tmp.equals("")){
                         tmp = t.split(":")[1];
                     }else{
-                        data.add(tmp+"@"+t.split(":")[1]);
-                        tmp = t.split(":")[1];
+                        if (!tmp.equals(t.split(":")[1])) {
+                            data.add(tmp + "@" + t.split(":")[1]);
+                            tmp = t.split(":")[1];
+                        }
                     }
                 }
                 return data.iterator();
             }
         });
+
+        words.print();
+
 
         JavaPairDStream<String, Integer> wordsAndOne = words.mapToPair(e -> new Tuple2<>(e,1));
         JavaPairDStream<String, Integer> userCount = wordsAndOne.reduceByKey((Function2<Integer, Integer, Integer>) (a, b) -> a + b);
