@@ -182,6 +182,5 @@
     <orderEntry type="library" name="Maven: javax.mail:javax.mail-api:1.4.7" level="project" />
     <orderEntry type="library" name="Maven: javax.mail:mail:1.4.7" level="project" />
     <orderEntry type="library" name="Maven: commons-cli:commons-cli:1.4" level="project" />
-    <orderEntry type="library" name="scala-sdk-2.12.7" level="application" />
   </component>
 </module>

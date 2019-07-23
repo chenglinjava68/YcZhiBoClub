@@ -8,17 +8,13 @@ import java.util.List;
 public class test {
 
     public static void main(String[] args) {
-
-        List<String> list = new ArrayList<>();
-        list.add("S1562894979001&230588970375");
-        list.add("S1562894978005&230588970375");
-        list.add("S1562894977003&230588970375");
-        list.add("S1562894979004&230588970375");
-        list.add("S1562894979006&230588970375");
-        list.add("S1562894979007&230588970375");
-        list.add("S1562894979002&230588970375");
-        Collections.sort(list);
-        System.out.println(list);
+int a =11;
+        if(a>10 && a < 12) {
+                System.out.println(a + "在10和12之间");
+        }
+            else{
+                System.out.println(a+"要么小与10 要么大于12");
+            }
     }
 }
 
